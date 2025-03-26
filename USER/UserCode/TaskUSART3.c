@@ -121,9 +121,11 @@ void USART3_RX_Function(void)
 								if(USART3_byte_buf[1] == 0x07 && USART3_byte_buf[2] == 0x06 && USART3_byte_buf[3] == 0x03)//ÖÇÄÜ×·×Ù
 								{
 										Tracking_Speed_Pan = ((USART3_byte_buf[4] &0x0f)<<12) + ((USART3_byte_buf[5] &0x0f)<<8) + ((USART3_byte_buf[6] &0x0f)<<4) + ((USART3_byte_buf[7] &0x0f));
-										Tracking_Speed_Pan = ~Tracking_Speed_Pan + 1;
+										Tracking_Speed_Pan = ~Tracking_Speed_Pan+1;
+										//Tracking_Speed_Pan /= 100;
 										Tracking_Speed_Tilt = ((USART3_byte_buf[8] &0x0f)<<12) + ((USART3_byte_buf[9] &0x0f)<<8) + ((USART3_byte_buf[10] &0x0f)<<4) + ((USART3_byte_buf[11] &0x0f));
-										Tracking_Speed_Tilt = ~Tracking_Speed_Tilt + 1;	
+										Tracking_Speed_Tilt = ~Tracking_Speed_Tilt+1;
+										//Tracking_Speed_Tilt /= 100;	
 										Special_Function = Auto_Tracking;
 								}
             }

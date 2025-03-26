@@ -841,14 +841,7 @@ void SpecialFunctions(void)//特殊功能
 #endif
 				case Auto_Tracking:
 				{
-						if(rocker_mark)//手控介入
-						{
-								manual_counter = 0;//计时器清零
-						}
-						else
-						{
-								manual_counter += (manual_counter > 65535)?0:1;
-						}
+						manual_counter += (manual_counter > 65535)?0:1;
 						if(manual_counter > 500)
 						{
 								Pan_Motion_Mode = Rocker_Motion;
@@ -861,6 +854,8 @@ void SpecialFunctions(void)//特殊功能
 				}break;
         case Tour_Scan_Disable://无操作，原始状态
         {
+						if(rocker_mark)//手控介入
+								manual_counter = 0;//计时器清零
         }//break;
         default:
         {

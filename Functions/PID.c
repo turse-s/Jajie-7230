@@ -40,10 +40,38 @@ float RealSpeedPID_I(int ts,int cs,ipid_data *ipid)
     return output;		
 }
 
-void PID_PWM(int ts,int cs,ppid_data *ppid,int addr)
+void PID_PWM_Pan(int ts,int cs,ppid_data *ppid)
 {
-		if (addr)//垂直
-		{
+			if (ts==0)
+			{
+				if(cs==0)
+				{
+					ppid->prev_error =0;
+					ppid->integral = 0;
+					Motor_Pan_BRK(BRK_ON);
+				
+				}
+			}
+				else
+				{
+					if(ts > 0)//
+					Motor_Pan_DIR(DIR_Right);
+					else if(ts < 0)//
+					Motor_Pan_DIR(DIR_Left);
+					Motor_Pan_BRK(BRK_OFF);
+				}
+			
+		int pwm;
+		pwm = (int)RealSpeedPID_P(ts,cs,ppid);
+		if(abs(pwm)>Max_PWM)
+			pwm = Max_PWM;
+		ppid->pwm = pwm;
+		TIM_SetCompare1(TIM9,abs(pwm));
+}
+
+void PID_PWM_Tilt(int ts,int cs,ppid_data *ppid)
+{
+
 			if (ts==0)
 			{
 				if(cs==0)
@@ -61,38 +89,13 @@ void PID_PWM(int ts,int cs,ppid_data *ppid,int addr)
 					Motor_Tilt_DIR(DIR_Up);
 					Motor_Tilt_BRK(BRK_OFF);
                 }
-		}
-		else//水平
-		{
-			if (ts==0)
-			{
-				if(cs==0)
-				{
-					ppid->prev_error =0;
-					ppid->integral = 0;
-					Motor_Pan_BRK(BRK_ON);
-				
-				}
-				else
-				{
-					if(ts > 0)//
-					Motor_Pan_DIR(DIR_Right);
-					else if(ts < 0)//
-					Motor_Pan_DIR(DIR_Left);
-					Motor_Pan_BRK(BRK_OFF);
-				}
-			}
-		}
 		int pwm;
 		pwm = (int)RealSpeedPID_P(ts,cs,ppid);
 		if(abs(pwm)>Max_PWM)
 			pwm = Max_PWM;
-		if(addr)
+		ppid->pwm = pwm;
 		TIM_SetCompare2(TIM9,abs(pwm));
-		else
-		TIM_SetCompare1(TIM9,abs(pwm));
 }
-
 //生成一个给ppidpan和ppidtild赋值的函数
 void PID_Init(ppid_data *ppid,float Kp,float Ki,float Kd)
 {

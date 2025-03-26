@@ -23,6 +23,7 @@
 #include "TaskMap.h"
 #include "stm32f4xx_iwdg.h"
 #include "Filter.h"
+#include "PID.h"
 //***********************************************************************************
 //
 //                                  Defines
@@ -387,8 +388,8 @@ extern u16 Scan_Time_Right;//…®√ËÕ£¡Ù ±º‰
 extern u16 Scan_Speed;
 extern u16 Watcher_Time;
 extern u16 Watcher_Speed;
-extern u16 Tracking_Speed_Pan;
-extern u16 Tracking_Speed_Tilt;
+extern short Tracking_Speed_Pan;
+extern short Tracking_Speed_Tilt;
 extern double Watcher_Angle_Pan;
 extern double Watcher_Angle_Tilt;
 extern double Section_Border1_Angle;
@@ -859,6 +860,7 @@ extern u8 Origin_Machine_Record[8];
 //Motor
 #define Rocker_Motion       0xf000
 #define Location_Motion     0x0fff
+#define AutoTracking_Motion	0x0ff0
 #define Location_Motion_Scan    0x01ff
 #define Pan_Angle_Report        0x0001
 #define Tilt_Angle_Report       0x0002

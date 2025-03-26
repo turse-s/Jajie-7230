@@ -2840,6 +2840,8 @@ u32 Parameters_Init(void)
     u32 data_p = 0,data_t = 0,data_p1 = 0,data_p2 = 0;
 	u32 pBuffer[4];
   state = 1;
+	PID_Init(&Pan_ppid,0.3,0.001,0.1);
+	PID_Init(&Tilt_ppid,0.5,0.003,0.1);
 	STMFLASH_Read(Flash_addr + Machine_Origin,pBuffer,4);
 		if(pBuffer[0] != 0xffffffff && pBuffer[1] != 0xffffffff)
 		{
@@ -3059,8 +3061,8 @@ u32 Parameters_Init(void)
     }
     else
     {
-        Pan_Ultimate_MaxSpeed = 10000;
-        Tilt_Ultimate_MaxSpeed = 10000;
+        Pan_Ultimate_MaxSpeed = 8000;
+        Tilt_Ultimate_MaxSpeed = 2000;
         Pan_Ultimate_MinSpeed = A_MinSpeed;
         Tilt_Ultimate_MinSpeed = A_MinSpeed;
         Scale_Velocity_Pan = 4.0;

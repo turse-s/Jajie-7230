@@ -744,17 +744,15 @@ int Motor_Exception_Handle(u8 Encoder_State, u8 Soft_Limit_FLAG, int ts, int add
 void AutoTrackingMotor(int ts,int cs,ppid_data *ppid,int addr)
 {
     if(addr){
-        PID_Init(&Tilt_ppid,0,0,0);
         if(Motor_Exception_Handle(Tilt_Encoder_State,Tilt_Soft_Limit_FLAG,Tracking_Speed_Tilt,1))
         {
-            PID_PWM(Tracking_Speed_Tilt,tilt_data.speed,&Tilt_ppid,1);
+					PID_PWM_Tilt((abs(Tracking_Speed_Tilt)>2000?0:Tracking_Speed_Tilt),tilt_data.speed,&Tilt_ppid);
         }
     }
     else{
-        PID_Init(&Pan_ppid,0,0,0);
         if(Motor_Exception_Handle(Pan_Encoder_State,Pan_Soft_Limit_FLAG,Tracking_Speed_Pan,0))
         {
-            PID_PWM(Tracking_Speed_Pan,pan_data.speed,&Pan_ppid,0);
+					PID_PWM_Pan((abs(Tracking_Speed_Pan)>2000?0:Tracking_Speed_Pan),pan_data.speed,&Pan_ppid);
         }
     }
 }
