@@ -1,0 +1,23 @@
+#ifndef _laser_H
+#define _laser_H
+#include "includes.h"
+extern uint8_t laser_onoff_cmd[7];//                = {0xff,0x01,0x01,0x01,0x01,0x00,0x04};//
+extern uint8_t laser_current_cmd[7];//  = {0xff,0x01,0x01,0x02,0x00,0x00,0x04};//电流
+extern uint8_t laser_current_set[7];//      = {0xff,0x01,0x01,0x03,0x00,0x00,0x00};//设置电流，第四位0x00~0xff
+extern uint8_t laser_step_decrease[7];//        = {0xff,0x01,0x01,0x04,0x00,0x00,0x00};//光斑变小走指定步数，第五�?
+extern uint8_t laser_step_increase[7];//        = {0xff,0x01,0x01,0x04,0x01,0x00,0x00};//光斑变大走指定步数，第五�?
+extern uint8_t laser_position_set[7];//     = {0xff,0x01,0x01,0x05,0x00,0x00,0x00};//设置光斑位置�?x0000~0x1db0
+extern uint8_t laser_reset[7];//
+typedef enum
+{
+    laser_off,
+    laser_on
+} laser_e;
+typedef struct
+{
+    uint8_t laser_status;
+    int laser_position;
+} laser_s;
+extern laser_s laser_t;
+void laser_handle(void);
+#endif
