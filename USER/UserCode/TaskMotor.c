@@ -365,7 +365,8 @@ int Motor_Pan_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curren
         {
             Pan_Timer_Start = 1;
         }
-        out_speed = pow(dif_err,2) * 500 + 5;//100 * fabs(dif_err)
+        out_speed = //pow(dif_err,2) * 500 + 5;
+				75 * fabs(dif_err);
     }
     else
     {
@@ -427,7 +428,7 @@ int Motor_Tilt_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curre
     {
         dif_err -= (fabs(dif_err) / dif_err) * 360;
     }
-    if(fabs(dif_err) >= Tilt_Angle_Accuracy)
+    if(fabs(dif_err) >= Tilt_Angle_Accuracy*2)
     {
         if (fabs(dif_err) >= Tilt_Angle_Accuracy * 1.2)
         {
@@ -437,7 +438,8 @@ int Motor_Tilt_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curre
         {
             Tilt_Timer_Start = 1;
         }
-        out_speed = dif_err * 1000 + 5;//pow(dif_err,2) * 1000 + 5;//50 * fabs(dif_err);//pow(dif_err,2) * k + b;
+        out_speed = //300dif_err * 1000 + 5;//pow(dif_err,2) * 1000 + 5;//
+				75 * fabs(dif_err);//pow(dif_err,2) * k + b;
     }
     else
     {
@@ -464,7 +466,7 @@ int Motor_Tilt_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curre
     {
 			out_speed = (out_speed > 0) ? A_MinSpeed : -A_MinSpeed;
     }
-    //out_speed *= (dif_err >= 0) ?  1 : -1;//判断方向
+    out_speed *= (dif_err >= 0) ?  1 : -1;//判断方向
     out_speed = (Motion_Mode == Location_Motion_Scan) ? out_speed = ~out_speed + 1 : out_speed;//判断是否为大于180扫描
     if ((Tilt_Soft_Limit_FLAG == Tilt_Limit_Over_Up && out_speed > 0) || (Tilt_Soft_Limit_FLAG == Tilt_Limit_Over_Down && out_speed < 0))
     {
@@ -607,7 +609,7 @@ float Motor_Tilt_PWM_PID(int TargetSpeed,int CurrentSpeed,double Real_Angle,doub
 				 Tilt_CMD_Count = 1;
 		return 0;
 #else
-    if (TargetSpeed * CurrentSpeed < 0)
+    if (TargetSpeed * CurrentSpeed < 0 && abs(CurrentSpeed) > 50)
     {
         T_A = 0;
         T_I = 0 ;

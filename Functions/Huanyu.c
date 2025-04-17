@@ -45,6 +45,19 @@ void HuanYuFunctions(u16 Down_CMD,u16 Down_Data)
                           EEPRom_WriteDataLen(EEPROM_Parameter,(scan_id + 230),HY_Position_Record,Preset_Bytes_NUN);
                       }
                 }break;
+                case Scan_Stay_Time:
+                {
+                      u16 scan_id;
+                      scan_id = (Down_CMD & 0xff00)>>8;
+                      if (scan_id < 6)
+                      {
+                             Sweep[scan_id].time_left = Down_Data >> 8;
+															Sweep[scan_id].time_right = Down_Data &0xff;
+                             HY_Position_Record[1] = Sweep[scan_id].time_left ;
+                             HY_Position_Record[2] = Sweep[scan_id].time_right ;
+                             EEPRom_WriteDataLen(EEPROM_Parameter,(scan_id + 230),HY_Position_Record,Preset_Bytes_NUN);
+                      }
+                }break;							
                       //开始线扫
                 case Start_Scan:
                 {
@@ -290,8 +303,52 @@ void HuanYuFunctions(u16 Down_CMD,u16 Down_Data)
                     HY_Position_Record[7] = (u32)(Fruit.Down * 1000) >> 8;
                     HY_Position_Record[8] = (u32)(Fruit.Down * 1000);
                           EEPRom_WriteDataLen(EEPROM_Parameter,(Fruit.Id + Skin_Fruit),HY_Position_Record,Preset_Bytes_NUN);
-                      }
-
+                      }break;
+										case Skin_Start:
+                    {
+											u32 data_t = 0;
+                            //获取执行id
+                            Fruit.Id = Down_CMD >> 8;
+                            //获取速度
+#ifdef REVERSE_TILT
+                    Fruit.Speed = ~Speed_Level_Tilt(Down_Data>>8,0) + 1;
+#else
+                    Fruit.Speed = Speed_Level_Tilt(Down_Data>>8,0);
+#endif
+                        //保存一圈垂直偏移角度
+                            if((Down_Data &0xff) == 0x00)
+                            {
+                                Fruit.Tilt_Dif = 5;
+                            }
+                            else
+                            {
+                                Fruit.Tilt_Dif = Down_Data &0xff;
+                            }
+        
+                        //提取e方中的数据，上下限位方向
+                        if(EEPRom_ReadOneByte(EEPROM_Parameter,(Fruit.Id + Skin_Fruit -1  * Preset_Bytes_NUN) == 0xaa))
+                            {
+                    EEPRom_ReadDataLen(EEPROM_Parameter,(Fruit.Id + Skin_Fruit),HY_Position_Extract,Preset_Bytes_NUN);
+                              data_t = 0;
+                    data_t |= HY_Position_Extract[3];
+                    data_t <<= 8;
+                    data_t |= HY_Position_Extract[4];
+                    data_t <<= 8;
+                    data_t |= HY_Position_Extract[5];
+                    Fruit.Up = ((double)data_t) / 1000.0;
+                                data_t = 0;
+                    data_t |= HY_Position_Extract[6];
+                    data_t <<= 8;
+                    data_t |= HY_Position_Extract[7];
+                    data_t <<= 8;
+                    data_t |= HY_Position_Extract[8];
+                    Fruit.Down = ((double)data_t) / 1000.0;
+                                Fruit.Direction =   HY_Position_Extract[2];
+                            }
+                        Special_Function = Skin_Fruit_ON;
+                        Fruit.Statt_Mode = 0;
+                        Pan_Target_Speed = 0;
+                        }break;	
       }
 }
 

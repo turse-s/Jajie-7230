@@ -193,187 +193,227 @@
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pancandata</ItemText>
+          <ItemText>Pan_Location_Speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>out_speed,0x0A</ItemText>
+          <ItemText>P_D,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Location_Speed,0x0A</ItemText>
+          <ItemText>Pan_CMD_Count,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>P_D,0x0A</ItemText>
+          <ItemText>Special_Function</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_CMD_Count,0x0A</ItemText>
+          <ItemText>Sweep[0],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Special_Function</ItemText>
+          <ItemText>pan_data,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Sweep[0],0x0A</ItemText>
+          <ItemText>USART3_TX_BOX</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>1</WinNumber>
-          <ItemText>PT_Position_Extract</ItemText>
+          <ItemText>USART1_byte_buf</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>1</WinNumber>
-          <ItemText>PT_Position_Record</ItemText>
+          <ItemText>Speedmode,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
           <WinNumber>1</WinNumber>
-          <ItemText>out_speed,0x0A</ItemText>
+          <ItemText>Pan_Soft_Limit_FLAG</ItemText>
         </Ww>
         <Ww>
           <count>17</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pan_data,0x0A</ItemText>
+          <ItemText>Pan_Machine_Origin,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>18</count>
           <WinNumber>1</WinNumber>
-          <ItemText>USART3_TX_BOX</ItemText>
+          <ItemText>Tilt_Machine_Origin,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>19</count>
           <WinNumber>1</WinNumber>
-          <ItemText>USART1_byte_buf</ItemText>
+          <ItemText>Pan_Machine_Origin</ItemText>
         </Ww>
         <Ww>
           <count>20</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Speedmode,0x0A</ItemText>
+          <ItemText>Tilt_Machine_Origin</ItemText>
         </Ww>
         <Ww>
           <count>21</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Soft_Limit_FLAG</ItemText>
+          <ItemText>Pan_User_Limit_Switch</ItemText>
         </Ww>
         <Ww>
           <count>22</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Machine_Origin,0x0A</ItemText>
+          <ItemText>Pan_A_Speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>23</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Tilt_Machine_Origin,0x0A</ItemText>
+          <ItemText>P_Pan,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>24</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Machine_Origin</ItemText>
+          <ItemText>I_Pan,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>25</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Tilt_Machine_Origin</ItemText>
+          <ItemText>Pan_Kp</ItemText>
         </Ww>
         <Ww>
           <count>26</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_User_Limit_Switch</ItemText>
+          <ItemText>Pan_Ki</ItemText>
         </Ww>
         <Ww>
           <count>27</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_A_Speed,0x0A</ItemText>
+          <ItemText>Tracking_Speed_Pan,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>28</count>
           <WinNumber>1</WinNumber>
-          <ItemText>P_Pan,0x0A</ItemText>
+          <ItemText>Tracking_Speed_Tilt,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>29</count>
           <WinNumber>1</WinNumber>
-          <ItemText>I_Pan,0x0A</ItemText>
+          <ItemText>USART3_RX_Buf</ItemText>
         </Ww>
         <Ww>
           <count>30</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Kp</ItemText>
+          <ItemText>pan_data.speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>31</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_Ki</ItemText>
+          <ItemText>tilt_data.speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>32</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Tracking_Speed_Pan,0x0A</ItemText>
+          <ItemText>Special_Function</ItemText>
         </Ww>
         <Ww>
           <count>33</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Tracking_Speed_Tilt,0x0A</ItemText>
+          <ItemText>Pan_ppid,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>34</count>
           <WinNumber>1</WinNumber>
-          <ItemText>USART3_RX_Buf</ItemText>
+          <ItemText>Tilt_ppid,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>35</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pan_data.speed,0x0A</ItemText>
+          <ItemText>manual_counter,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>36</count>
           <WinNumber>1</WinNumber>
-          <ItemText>tilt_data.speed,0x0A</ItemText>
+          <ItemText>rocker_mark,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>37</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Special_Function</ItemText>
+          <ItemText>\\APP_PT2315_2_7_0_FOC\USER/UserCode/parameters.c\Tracking_Speed_Pan,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>38</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Pan_ppid,0x0A</ItemText>
+          <ItemText>\\APP_PT2315_2_7_0_FOC\USER/UserCode/parameters.c\Tracking_Speed_Tilt,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>39</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Tilt_ppid,0x0A</ItemText>
+          <ItemText>Pan_PWM</ItemText>
         </Ww>
         <Ww>
           <count>40</count>
           <WinNumber>1</WinNumber>
-          <ItemText>manual_counter,0x0A</ItemText>
+          <ItemText>Pan_A_Speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>41</count>
           <WinNumber>1</WinNumber>
-          <ItemText>rocker_mark,0x0A</ItemText>
+          <ItemText>pan_data.speed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>42</count>
           <WinNumber>1</WinNumber>
-          <ItemText>\\APP_PT2315_2_7_0_FOC\USER/UserCode/parameters.c\Tracking_Speed_Pan,0x0A</ItemText>
+          <ItemText>Pan_Ultimate_MaxSpeed,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>43</count>
           <WinNumber>1</WinNumber>
-          <ItemText>\\APP_PT2315_2_7_0_FOC\USER/UserCode/parameters.c\Tracking_Speed_Tilt,0x0A</ItemText>
+          <ItemText>Scale_Velocity_Pan</ItemText>
+        </Ww>
+        <Ww>
+          <count>44</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Preset_Extract_Flag</ItemText>
+        </Ww>
+        <Ww>
+          <count>45</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Sweep[0]</ItemText>
+        </Ww>
+        <Ww>
+          <count>46</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Down_CMD</ItemText>
+        </Ww>
+        <Ww>
+          <count>47</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Down_Data</ItemText>
+        </Ww>
+        <Ww>
+          <count>48</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Tilt_Machine_Origin</ItemText>
+        </Ww>
+        <Ww>
+          <count>49</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Fruit</ItemText>
+        </Ww>
+        <Ww>
+          <count>50</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Special_Function</ItemText>
+        </Ww>
+        <Ww>
+          <count>51</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Tilt_Timer_Start</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -496,6 +536,66 @@
           <count>23</count>
           <WinNumber>2</WinNumber>
           <ItemText>Analyze_BOX</ItemText>
+        </Ww>
+        <Ww>
+          <count>24</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Preset_Extract_Flag,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>25</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Current_Angle_User</ItemText>
+        </Ww>
+        <Ww>
+          <count>26</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>tilt_angle_query</ItemText>
+        </Ww>
+        <Ww>
+          <count>27</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Encoder_Position_Real,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>28</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Current_Angle_Machine</ItemText>
+        </Ww>
+        <Ww>
+          <count>29</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Encoder_Direction</ItemText>
+        </Ww>
+        <Ww>
+          <count>30</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Machine_Origin,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>31</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Target_Speed,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>32</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\APP_PT7280_2_7_2025_4_8_16_33_24\USER/UserCode/parameters.c\Tilt_A_Speed,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>33</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\APP_PT7280_2_7_2025_4_8_16_33_24\USER/UserCode/parameters.c\PWM_T,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>34</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\APP_PT7280_2_7_2025_4_8_16_33_24\USER/UserCode/parameters.c\Tilt_Real_Angle</ItemText>
+        </Ww>
+        <Ww>
+          <count>35</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Tilt_Target_Angle</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>
@@ -1784,7 +1884,7 @@
       <GroupNumber>13</GroupNumber>
       <FileNumber>95</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\Functions\RockerControl.c</PathWithFileName>

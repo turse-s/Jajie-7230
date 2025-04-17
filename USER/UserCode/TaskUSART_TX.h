@@ -29,6 +29,7 @@ extern u16 CAM_ZoomPosCur;
 #ifdef ZS
 extern u8 Position_Arrival[5];
 #endif
+extern u8 Position_Arrival_HY[8];
 void Task_USART_TX(void *p);
 void USART_TX_Function(void);
 #endif

@@ -322,7 +322,7 @@ extern u8 USART_TX_BUF[USART_TX_BUF_SIZE];
 #define A_MaxSpeed  3750
 #else
 #ifdef TURBO
-#define A_MaxSpeed  900
+#define A_MaxSpeed  1024
 #else
 #define A_MaxSpeed  5000
 #endif
@@ -466,6 +466,11 @@ extern u8 Speed_Set_Satus;
 #define Up_Sidedown                     0xa51f
 #define Limit_Pan_Switch							0xa521
 #define EEPROM_Return                   0xa523
+//ÓêË¢¹¦ÄÜ
+#define Wiper_UP										0xa551
+#define Wiper_Down									0xa552
+#define Wiper_ON										0xa553
+#define Wiper_Dir										0xa554
 #ifdef ZS //Õ×êÉ
 #define Extract_Number_Require  0x4096
 extern u16 Extract_Number;
