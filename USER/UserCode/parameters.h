@@ -329,7 +329,7 @@ extern u8 USART_TX_BUF[USART_TX_BUF_SIZE];
 #endif
 
 #ifdef TURBO
-#define A_MinSpeed  10
+#define A_MinSpeed  8
 #else
 #ifdef MIN_SPEED_HIGH
 #define A_MinSpeed  50
@@ -352,7 +352,7 @@ extern u8 USART_TX_BUF[USART_TX_BUF_SIZE];
 #define Watcher_WaitTime_Min    200
 extern u16 Stay_Time;
 #define Speed_Offset        40
-#define Tour_Speed_Max      A_MaxSpeed
+ #define Tour_Speed_Max      A_MaxSpeed
 #define Tour_Speed_Mid      A_MaxSpeed / 2
 #define Tour_Speed_Min      50
 #define Scan_Speed_Max      A_MaxSpeed

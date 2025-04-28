@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Output\</OutputDirectory>
-          <OutputName>APP_PT7280_2_7_2025_2025_4_14_16_15_0</OutputName>
+          <OutputName>APP_PT7280_2_7_ZP_2025_4_17_17_31_55</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
