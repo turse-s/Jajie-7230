@@ -366,7 +366,7 @@ int Motor_Pan_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curren
             Pan_Timer_Start = 1;
         }
         out_speed = //pow(dif_err,2) * 500 + 5;
-				75 * fabs(dif_err);
+				60 * fabs(dif_err);
     }
     else
     {

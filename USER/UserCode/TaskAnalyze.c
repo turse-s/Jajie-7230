@@ -231,7 +231,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     }
     break;
     case ZOOM_Tele:
-        if(USART3_Protocol_Type == Protocol_VISCA)
+        if(USART3_Protocol_Type == Protocol_VISCA && PT_END_ID == 0x01)
         {
 			if (StartML > 0)
             {
@@ -258,7 +258,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         USART_x = 3;
         break;
     case ZOOM_Wide:
-        if(USART3_Protocol_Type == Protocol_VISCA)
+        if(USART3_Protocol_Type == Protocol_VISCA && PT_END_ID == 0x01)
         {
                 if (StartML > 0)
                 {
@@ -302,7 +302,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             break;
 #endif				
     case FOCUS_Far:
-        if(USART3_Protocol_Type == Protocol_VISCA)
+        if(USART3_Protocol_Type == Protocol_VISCA && PT_END_ID == 0x01)
         {
             send_len = 6;
             memcpy(send_data,CAM_Focus_Far,send_len);
@@ -310,7 +310,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         USART_x = 3;
         break;
     case FOCUS_Near:
-        if(USART3_Protocol_Type == Protocol_VISCA)
+        if(USART3_Protocol_Type == Protocol_VISCA && PT_END_ID == 0x01)
         {
             send_len = 6;
             memcpy(send_data,CAM_Focus_Near,send_len);
@@ -2226,7 +2226,7 @@ void Special_Preset_Set(u16 num)
 #endif
 ////***********************************************************************************************
 ////jing210714
-//      case Tilt_Inversion:                    //249调整垂直角度增长方向
+//      case Tilt_Inversion:                    //249调整垂直角度增长方垑
 //          Tilt_Encoder_Direction = Encoder_Forward;
 //            memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
 //            PT_Position_Record[7] = Tilt_Encoder_Direction;
@@ -2628,7 +2628,7 @@ void Special_Preset_Extract(u16 num)
 //    break;
     case Self_Adaption_Switch:        //222�ر�����Ӧ
     {
-        Self_Adaption = Self_Adaption_Disable;
+        Self_Adaption = Self_Adaption_Manual_Disable;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[7] = Self_Adaption;
         EEPRom_WriteDataLen(EEPROM_Parameter,Self_Adaption_Switch,PT_Position_Record,Parameter_Bytes_NUN);
@@ -2804,7 +2804,7 @@ void Special_Preset_Extract(u16 num)
 #endif
 ////***********************************************************************************************
 ////jing210714
-//      case Tilt_Inversion:                    //249调整垂直角度增长方向
+//      case Tilt_Inversion:                    //249调整垂直角度增长方垑
 //          Tilt_Encoder_Direction = Encoder_Inversion;
 //            memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
 //            PT_Position_Record[7] = Tilt_Encoder_Direction;

@@ -102,6 +102,7 @@ void USART2_RX_Function(void)
 						if (USART2_byte_buf[1] > 0x00 && USART2_byte_buf[1] <0x0f)
 					#endif
             {
+                PT_END_ID = USART2_byte_buf[1];
                 if(USART2_byte_num > 6)
                 {
                     if(USART2_byte_buf[6] == ((USART2_byte_buf[1] + USART2_byte_buf[2] + USART2_byte_buf[3] + USART2_byte_buf[4] + USART2_byte_buf[5]) & 0xff))

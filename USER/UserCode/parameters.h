@@ -439,10 +439,10 @@ extern u8 Speed_Set_Satus;
 #define Query_ZOOM              0x0055
 #define Query_ZOOM_Max          0x0155
 #define Query_ZOOM_Min          0x0255
-#define Query_Versions_PT       0x2808  //查询固件版本
-#define Query_Type_PT           0x2810  //查询云台型号
-#define Query_Time_Current 0x2811 //查询当前时间
-#define Query_Encoder_PT        0x2812  //查询编码器型�?
+#define Query_Versions_PT       0x2808  //查�?�固件版�?
+#define Query_Type_PT           0x2810  //查�??云台型号
+#define Query_Time_Current 0x2811 //查�?�当前时�?
+#define Query_Encoder_PT        0x2812  //查�?�编码器型�??
 #define Set_PID_Pan           0x3001
 #define Set_PID_Tilt          0x3002
 #define Setup_Filter            0x0412
@@ -682,6 +682,7 @@ extern u8 Return_Mode;
 extern u8 Return_Data_Type;
 #define Self_Adaption_Enable    0x01
 #define Self_Adaption_Disable   0x00
+#define Self_Adaption_Manual_Disable	0x02
 extern u8 Self_Adaption;
 //**********************************
 //commond_res from usart3
@@ -834,6 +835,8 @@ typedef enum
 #define Pan_Limit_Break         5
 #define Tilt_Limit_Brake        10
 #define Tilt_Limit_Drop         0x10
+extern double Tilt_Limit_Down; 
+extern u8 PT_END_ID;
 extern u8 Tilt_Hard_Limit_FLAG;
 extern u8 Tilt_Soft_Limit_FLAG;
 extern u8 Origin_Machine_Flag;
@@ -846,7 +849,7 @@ extern u8 Origin_Machine_Record[8];
 //*******************************************************
 #define Pan_MAX_Sampling_Period_Position    436
 #define Tilt_MAX_Sampling_Period_Position   218
-//编码器单区宽�?
+//编码器单区�?��??
 #define Encoder_Sector_Position 8192 / 2
 #define pi 3.14159265f
 //typedef struct Encoder_Position_BUF

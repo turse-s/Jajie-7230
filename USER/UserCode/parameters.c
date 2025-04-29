@@ -101,7 +101,7 @@ u8 Preset_Number = 0;
 u8 Preset_Empty = 0;
 u8 Return_Mode = Return_Query;
 u8 Return_Data_Type = Return_Angle;
-u8 Self_Adaption = Self_Adaption_Enable;//恩博默认关闭自适应
+u8 Self_Adaption = Self_Adaption_Disable;//恩博默认关闭自适应
 u8 Special_Function = Tour_Scan_Disable;
 u8 Watcher_Switch = OFF;
 u8 watcher_pause_state = watcher_continue;//守望位暂停状态改为‘继续’
@@ -192,6 +192,7 @@ double Tilt_Limit_Down = Tilt_Angle_Limit_Down;
 u8 Tilt_Hard_Limit_FLAG = Tilt_Limit_None;
 u8 Tilt_Soft_Limit_FLAG = Tilt_Limit_None;
 u8 Origin_Machine_Flag = 0;
+u8 PT_END_ID;//20250428华网通过id区分变倍聚焦指令
 u8 Origin_Machine_Record[8] = {0xaa,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 #ifdef ZS
 u16 Extract_Number = 0;
@@ -209,7 +210,7 @@ Scan_Data Sweep[6] = {0,0,Tour_Speed_Mid,0,0};
 Patrol_Data Cruise  = {30,345,15,345,32,1,5,0,0,0,0};
 #endif
 //*******************************************************
-//澧炲姞缂栫爜鍣ㄥ弻缂撳啿鏁扮粍锛岃褰曡烦鍖轰互琛ュ伩鍋忓樊
+//澧炲姞缂栫爜鍣ㄥ弻缂撳啿鏁扮粍锛岃?板綍璺冲尯浠ヨˉ鍋垮亸宸?
 //Encoder_Position_BUF_t Encoder_Position_BUF_Pan = {.Position_Sampling_Period = Pan_MAX_Sampling_Period_Position};
 //Encoder_Position_BUF_t Encoder_Position_BUF_Tilt = {.Position_Sampling_Period = Tilt_MAX_Sampling_Period_Position};
 //*******************************************************

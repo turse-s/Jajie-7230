@@ -65,6 +65,7 @@ void USART1_RX_Function(void)
 						if (USART1_byte_buf[1] > 0x00 && USART1_byte_buf[1] < 0x0f)
 					#endif
             {
+                PT_END_ID = USART1_byte_buf[1];
                 //USART1_byte_num ++;
                 if(USART1_byte_num == 7)
                 {

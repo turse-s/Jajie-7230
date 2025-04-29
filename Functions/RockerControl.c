@@ -104,7 +104,7 @@ int CalculateSpeed(u16 speed, u8 state_Self_Adaption, int ultimate_min, int ulti
     // 提取速度等级
     level = speed & 0xff;
 
-    if(state_Self_Adaption)
+    if(state_Self_Adaption == Self_Adaption_Enable)
     {
         // 限制变焦位置
         if(Zoom_Position > Zoom_Position_Max)

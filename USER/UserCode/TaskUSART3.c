@@ -87,7 +87,7 @@ void USART3_RX_Function(void)
                             PT_Position_Record[7] = USART3_Protocol_Type;
                             EEPRom_WriteDataLen(EEPROM_Parameter,USART3_Protocol_Type_Switch,PT_Position_Record,Parameter_Bytes_NUN);
 //                        }
-//                        Self_Adaption = Self_Adaption_Enable;
+                        Self_Adaption = (Self_Adaption==Self_Adaption_Disable)?Self_Adaption_Enable:Self_Adaption_Disable;
                     }
                     if(USART3_byte_buf[1] == 0x38 && USART3_byte_buf[2] == 0xff)
                     {
