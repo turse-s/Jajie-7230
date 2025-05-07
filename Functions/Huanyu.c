@@ -9,9 +9,10 @@ u8 HY_Position_Extract[16] = {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 void HuanYuFunctions(u16 Down_CMD,u16 Down_Data)
 {
       u8 send_len = 0;
-			u8 send_data[20] = {0};
-			u16 i = 0,j = 0;
-			switch(Down_CMD)
+	  u8 send_data[20] = {0};
+	  u16 i = 0,j = 0;
+      u16 low_byte = Down_CMD & 0xff; // 因为停留时间的命令是低8位，id是高8位,把低8位提取出来qhp
+	  switch(low_byte)
       {
           case Scan_Border_Left:
                 {      

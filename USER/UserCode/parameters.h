@@ -259,6 +259,7 @@ typedef struct /*串口数据传输使用*/
     u8 Statistic_number;        //内存块使用数
     u32 Memory_command[Memory_Data_NUM];
     u32 Memory_Data[Memory_Data_NUM];
+	u8 Memory_Data_2[Memory_Data_NUM];
     u8 Memory_Data_1[Memory_Finger_NUM][Memory_Data_NUM];
 } Memory_Struct;
 extern u8 Axial;//透传标识//调整护照支架
@@ -682,6 +683,7 @@ extern u8 Return_Mode;
 extern u8 Return_Data_Type;
 #define Self_Adaption_Enable    0x01
 #define Self_Adaption_Disable   0x00
+#define Self_Adaption_Manual_Disable    0x02
 extern u8 Self_Adaption;
 //**********************************
 //commond_res from usart3

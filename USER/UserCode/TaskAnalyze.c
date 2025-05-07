@@ -45,11 +45,13 @@ void Analyze_Function(void)
 {
 		u16 Down_CMD = 0;
 		u32 Down_Data = 0;
+        u8 Zoom_function = 0;
 		Down_CMD = Analyze_BOX.Memory_command[Analyze_BOX.extract_finger];
 		Down_Data = Analyze_BOX.Memory_Data[Analyze_BOX.extract_finger];
-		CMD_Analyze(Down_CMD,Down_Data,1);
+        Zoom_function = Analyze_BOX.Memory_Data_2[Analyze_BOX.extract_finger];
+        CMD_Analyze(Down_CMD,Down_Data,1,Zoom_function);
 }
-void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
+void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart,u8 Zoom_function)
 {
     //Q_ERR err_q;
     u16 i = 0,j = 0;
@@ -252,10 +254,17 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
                     zoom_record = -1;
                 }
             }
-						send_len = 6;
-            memcpy(send_data,CAM_Zoom_Tele,send_len);
+            if (Zoom_function != 0x02)
+            {
+                send_len = 6;
+                memcpy(send_data, CAM_Zoom_Tele, send_len);
+                USART_x = 3;
+            }
+            else
+            {
+                USART_x = 0;
+            }
         }
-        USART_x = 3;
         break;
     case ZOOM_Wide:
         if(USART3_Protocol_Type == Protocol_VISCA)
@@ -278,10 +287,17 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
                         StartML ++;
                     }
                 }
-						send_len = 6;
-            memcpy(send_data,CAM_Zoom_Wide,send_len);
+                if (Zoom_function != 0x02)
+                {
+                    send_len = 6;
+                    memcpy(send_data, CAM_Zoom_Wide, send_len);
+                    USART_x = 3;
+                }
+                else
+                {
+                    USART_x = 0;
+                }
         }
-        USART_x = 3;
         break;
 #ifdef ZS03
         case ZOOM_Set:
@@ -304,18 +320,32 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     case FOCUS_Far:
         if(USART3_Protocol_Type == Protocol_VISCA)
         {
-            send_len = 6;
-            memcpy(send_data,CAM_Focus_Far,send_len);
+            if (Zoom_function != 0x02)
+            {
+                send_len = 6;
+                memcpy(send_data, CAM_Focus_Far, send_len);
+                USART_x = 3;
+            }
+            else
+            {
+                USART_x = 0;
+            }
         }
-        USART_x = 3;
         break;
     case FOCUS_Near:
         if(USART3_Protocol_Type == Protocol_VISCA)
         {
-            send_len = 6;
-            memcpy(send_data,CAM_Focus_Near,send_len);
+            if (Zoom_function != 0x02)
+            {
+                send_len = 6;
+                memcpy(send_data, CAM_Focus_Near, send_len);
+                USART_x = 3;
+            }
+            else
+            {
+                USART_x = 0;
+            }
         }
-        USART_x = 3;
         break;
 //          激光灯操作
 //      case Laser_ONOFF://             0x0101
@@ -2628,7 +2658,7 @@ void Special_Preset_Extract(u16 num)
 //    break;
     case Self_Adaption_Switch:        //222关闭自适应
     {
-        Self_Adaption = Self_Adaption_Disable;
+        Self_Adaption = Self_Adaption_Manual_Disable;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[7] = Self_Adaption;
         EEPRom_WriteDataLen(EEPROM_Parameter,Self_Adaption_Switch,PT_Position_Record,Parameter_Bytes_NUN);

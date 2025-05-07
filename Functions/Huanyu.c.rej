@@ -1,0 +1,21 @@
+diff a/Functions/Huanyu.c b/Functions/Huanyu.c	(rejected hunks)
+@@ -45,6 +45,19 @@
+                           EEPRom_WriteDataLen(EEPROM_Parameter,(scan_id + 230),HY_Position_Record,Preset_Bytes_NUN);
+                       }
+                 }break;
++                case Scan_Stay_Time:
++                {
++                      u16 scan_id;
++                      scan_id = (Down_CMD & 0xff00)>>8;
++                      if (scan_id < 6)
++                      {
++                             Sweep[scan_id].time_left = Down_Data >> 8;
++															Sweep[scan_id].time_right = Down_Data &0xff;
++                             HY_Position_Record[1] = Sweep[scan_id].time_left ;
++                             HY_Position_Record[2] = Sweep[scan_id].time_right ;
++                             EEPRom_WriteDataLen(EEPROM_Parameter,(scan_id + 230),HY_Position_Record,Preset_Bytes_NUN);
++                      }
++                }break;							
+                       //��ʼ��ɨ
+                 case Start_Scan:
+                 {

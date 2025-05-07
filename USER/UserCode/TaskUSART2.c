@@ -123,6 +123,7 @@ void USART2_RX_Function(void)
 											//Ìî³ä½á¹¹Ìå
 											Analyze_BOX2.Memory_command[Analyze_BOX2.memory_finger]=(USART2_byte_buf[2] << 8) + USART2_byte_buf[3];
                       Analyze_BOX2.Memory_Data[Analyze_BOX2.memory_finger]=(USART2_byte_buf[4] << 8) + USART2_byte_buf[5];
+                      Analyze_BOX2.Memory_Data_2[Analyze_BOX2.memory_finger] = USART2_byte_buf[1];
                       Analyze_BOX2.Statistic_number ++;
                       Analyze_BOX2. memory_finger ++;
                       if(Analyze_BOX2.memory_finger >= Memory_Finger_NUM)
@@ -164,9 +165,11 @@ void    USART2_RX_Analyze(void)
         //Q_ERR err_q;
         u16 Down_CMD = 0;
         u32 Down_Data = 0;
-			  Down_CMD = Analyze_BOX2.Memory_command[Analyze_BOX2.extract_finger];
+        u8 Zoom_function = 0;
+		Down_CMD = Analyze_BOX2.Memory_command[Analyze_BOX2.extract_finger];
         Down_Data = Analyze_BOX2.Memory_Data[Analyze_BOX2.extract_finger];
-        CMD_Analyze(Down_CMD,Down_Data,2);
+        Zoom_function = Analyze_BOX2.Memory_Data_2[Analyze_BOX2.extract_finger];
+        CMD_Analyze(Down_CMD,Down_Data,2, Zoom_function);
 }
 //*************************************************************************
 u8 Origin_Machine_Data_U2[8];

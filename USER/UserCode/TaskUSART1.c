@@ -121,6 +121,7 @@ void USART1_RX_Function(void)
                             Angle_Decimal = 100.000;
                         }
                         Post_Information_Function(Sem_Analyze,&Analyze_BOX,(USART1_byte_buf[2] << 8) + USART1_byte_buf[3],(USART1_byte_buf[4] << 8) + (USART1_byte_buf[5]));
+                        Analyze_BOX.Memory_Data_2[Analyze_BOX.memory_finger] = USART1_byte_buf[1];
                         USART1_First_Frame_Flag = 1;//????????????
                     }
                     USART1_byte_num = 0;

@@ -3,7 +3,7 @@
 #include "parameters.h"
 void Task_Analyze(void *p);
 void Analyze_Function(void);
-void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart);
+void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart, u8 Zoom_function);
 void Special_Preset_Set(u16 num);
 void Special_Preset_Delete(u16 num);
 void Special_Preset_Extract(u16 num);
