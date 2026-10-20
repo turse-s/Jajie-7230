@@ -1771,17 +1771,17 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Origin_Tilt,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-//    case Angle_Return_Mode:           //203实时回传模式
-//    {
-////            if(Return_Mode != Return_Query_485)
-////            {
-//        Return_Mode = Return_RealTime;
-//        memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
-//        PT_Position_Record[7] = Return_Mode;
-//        EEPRom_WriteDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Record,Parameter_Bytes_NUN);
-////            }
-//    }
-//    break;
+    case Angle_Return_Mode:           //203实时回传模式
+    {
+//            if(Return_Mode != Return_Query_485)
+//            {
+        Return_Mode = Return_RealTime;
+        memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
+        PT_Position_Record[7] = Return_Mode;
+        EEPRom_WriteDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Record,Parameter_Bytes_NUN);
+//            }
+    }
+    break;
     case Tour_Speed_Regulation:       //204巡检速度增加
     {
         if (Speed_Set_Satus == 0)
