@@ -439,7 +439,7 @@ int Motor_Tilt_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curre
             Tilt_Timer_Start = 1;
         }
         out_speed = //300dif_err * 1000 + 5;//pow(dif_err,2) * 1000 + 5;//
-				60 * fabs(dif_err);//pow(dif_err,2) * k + b;
+				75 * fabs(dif_err);//pow(dif_err,2) * k + b;
     }
     else
     {

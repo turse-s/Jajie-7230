@@ -3021,8 +3021,8 @@ u32 Parameters_Init(void)
         EEPRom_ReadDataLen(EEPROM_Parameter,Max_Speed,PT_Position_Extract,Preset_Bytes_NUN);
         if(PT_Position_Extract[1] == 0x00)
         {
-            Pan_Ultimate_MaxSpeed = 1700;
-            Tilt_Ultimate_MaxSpeed = 950;
+            Pan_Ultimate_MaxSpeed = 1600;
+            Tilt_Ultimate_MaxSpeed = 760;
             Pan_Ultimate_MinSpeed = A_MinSpeed;
             Tilt_Ultimate_MinSpeed = A_MinSpeed;
             Scale_Velocity_Pan = 1.0;
@@ -3046,8 +3046,8 @@ u32 Parameters_Init(void)
     }
     else
     {
-        Pan_Ultimate_MaxSpeed = 1700;
-        Tilt_Ultimate_MaxSpeed = 1000;
+        Pan_Ultimate_MaxSpeed = 1600;
+        Tilt_Ultimate_MaxSpeed = 760;
         Pan_Ultimate_MinSpeed = A_MinSpeed;
         Tilt_Ultimate_MinSpeed = A_MinSpeed;
         Scale_Velocity_Pan = 1.0;
