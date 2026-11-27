@@ -6,10 +6,10 @@
 // Device    : STM32F407VET6
 //**************************************
 /*******************************
-ÔÆÌ¨·½Ïò£ºËÙ¶È£ºÉÏ+£¬ÏÂ-£»ÓÒ+£¬×ó-
-          ½Ç¶È£ºÉÏÔö£¬ÏÂ¼õ£»ÓÒÔö£¬×ó¼õ
-          Ë®Æ½½Ç¶ÈÏòÓÒ1~360¶È
-          ´¹Ö±½Ç¶È£¨Ô­µãÓë´óµØÆ½ÐÐ£©ÏòÉÏ1~45¶È£¬ÏòÏÂ360~315¶È
+ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È£ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½-
+          ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+          Ë®Æ½ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½ï¿½1~360ï¿½ï¿½
+          ï¿½ï¿½Ö±ï¿½Ç¶È£ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½1~45ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½360~315ï¿½ï¿½
 ********************************/
 #ifndef _parameter_H
 #define _parameter_H
@@ -30,30 +30,30 @@
 //
 //***********************************************************************************
 //#define GPIO_Remap_SWJ_JTAGDisable  ((uint32_t)0x00300200)  /*!< JTAG-DP Disabled and SW-DP Enabled */
-//GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);      /*Ê¹ÄÜSWD ½ûÓÃJTAG*/
-//ç¼“å­˜é•¿åº¦å¿…é¡»æ˜?32çš„å?æ•°
-#define PT_Version  0x2700  //³ÌÐò°æ±¾ºÅ
-//#define PT_LOAC_2215  //ÐÞ¸ÄÉè±¸ÐÍºÅÐèÒªµ÷ÕûoutputÎÄ¼þÃû³Æ£¬PT2315
-#define PT_HIAC_7280    //ÐÞ¸ÄÉè±¸ÐÍºÅÐèÒªµ÷ÕûoutputÎÄ¼þÃû³Æ£¬PT7280
+//GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);      /*Ê¹ï¿½ï¿½SWD ï¿½ï¿½ï¿½ï¿½JTAG*/
+//ç¼“å­˜é•¿åº¦å¿…é¡»ï¿½?32çš„ï¿½?ï¿½æ•°
+#define PT_Version  0x2700  //ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½
+//#define PT_LOAC_2215  //ï¿½Þ¸ï¿½ï¿½è±¸ï¿½Íºï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½outputï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Æ£ï¿½PT2315
+#define PT_HIAC_7280    //ï¿½Þ¸ï¿½ï¿½è±¸ï¿½Íºï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½outputï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Æ£ï¿½PT7280
 //#define PT_EXF
-//#define ECO           //µÍËÙÄ£Ê½
-#define TURBO       //³¬ÆµÄ£Ê½
-//#define LASER_SETUP   //Èç¹ûÊ¹ÓÃ¼¤¹âµÆÔò½«¸ÄÅäÖÃ´ò¿ª£¬·ñÔò½«Æä×¢ÊÍµô£¬×¢Òâ¼¤¹âµÆÅäÖÃµÄIOÓë±àÂëÆ÷IO¹²ÓÃ£¬ÕâÔÚÖ®ºóµÄ°æ±¾ÖÐÐèÒª¸Ä½ø
-//#define REVERSE_PAN //ÌØÊâµç»ú
-//#define REVERSE_TILT //ÌØÊâµç»ú
-//#define SH		//ÊÓ»Ô
-#define ZS		//Õ×êÉ
-//#define ZS02    //Õ×êÉÖÐÌì
+//#define ECO           //ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+#define TURBO       //ï¿½ï¿½ÆµÄ£Ê½
+//#define LASER_SETUP   //ï¿½ï¿½ï¿½Ê¹ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ò½«¸ï¿½ï¿½ï¿½ï¿½Ã´ò¿ª£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½Íµï¿½ï¿½ï¿½×¢ï¿½â¼¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½IOï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IOï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ä°æ±¾ï¿½ï¿½ï¿½ï¿½Òªï¿½Ä½ï¿½
+//#define REVERSE_PAN //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define REVERSE_TILT //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define SH		//ï¿½Ó»ï¿½
+#define ZS		//ï¿½ï¿½ï¿½ï¿½
+//#define ZS02    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //#define ZS03
-#define HY          //å¾Óî
-//#define NewU2				//ÐÂU2 ¶ÀÁ¢485Ä£Ê½
-#define INDU2				//¶ÀÁ¢ U2
+#define HY          //ï¿½ï¿½ï¿½
+//#define NewU2				//ï¿½ï¿½U2 ï¿½ï¿½ï¿½ï¿½485Ä£Ê½
+#define INDU2				//ï¿½ï¿½ï¿½ï¿½ U2
 #define RV					//Return in Visca
-//#define AUX_VISCA		//¸¨Öú¿ª¹Ø×ßvisca
-//#define FOC					//µç»ú×ßCANÍ¨ÐÅ foc
+//#define AUX_VISCA		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½visca
+//#define FOC					//ï¿½ï¿½ï¿½ï¿½ï¿½CANÍ¨ï¿½ï¿½ foc
 
 #ifdef ZS
-//#define NewU2				//ÐÂU2 ¶ÀÁ¢485Ä£Ê½
+//#define NewU2				//ï¿½ï¿½U2 ï¿½ï¿½ï¿½ï¿½485Ä£Ê½
 #define RV					//Return in Visca
 #endif
 #ifdef ZS03
@@ -64,26 +64,26 @@
 #define PT_HIAC_7280
 #endif
 #ifdef PT_LOAC_2215
-#define PID_PARAM1//PID²ÎÊýÅäÖÃ1 ÊÊÓÃÓÚ2315ÏµÁÐ²úÆ·
-#define RS_PARAM1//¼õËÙ¾àÀëÅäÖÃ1 ÊÊÓÃÓÚ2315ÏµÁÐ²úÆ·
-#define DIR_PARAM1//µç»ú·½ÏòÅäÖÃ
-#define MIN_SPEED_HIGH//×îµÍËÙ£º¸ß
-#define LIMIT_PARAM1//ÏÞÎ»ÅäÖÃ1 ÊÊÓÃÓÚ2315ÏµÁÐ²úÆ·
-//#define PT_Type     0x090b    //»úÆ÷ÐÍºÅ£¨16½øÖÆ
-#define PT_Type     0x1526  //»úÆ÷ÐÍºÅ£¨16½øÖÆ Çà´º°æ
+#define PID_PARAM1//PIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2315Ïµï¿½Ð²ï¿½Æ·
+#define RS_PARAM1//ï¿½ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2315Ïµï¿½Ð²ï¿½Æ·
+#define DIR_PARAM1//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define MIN_SPEED_HIGH//ï¿½ï¿½ï¿½ï¿½Ù£ï¿½ï¿½ï¿½
+#define LIMIT_PARAM1//ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2315Ïµï¿½Ð²ï¿½Æ·
+//#define PT_Type     0x090b    //ï¿½ï¿½ï¿½ï¿½ï¿½ÍºÅ£ï¿½16ï¿½ï¿½ï¿½ï¿½
+#define PT_Type     0x1526  //ï¿½ï¿½ï¿½ï¿½ï¿½ÍºÅ£ï¿½16ï¿½ï¿½ï¿½ï¿½ ï¿½à´ºï¿½ï¿½
 #endif
 #ifdef PT_HIAC_7280
-#define PID_PARAM2//PID²ÎÊýÅäÖÃ2 ÊÊÓÃÓÚ7280ÏµÁÐ²úÆ·
-#define RS_PARAM2//¼õËÙ¾àÀëÅäÖÃ2 ÊÊÓÃÓÚ7280ÏµÁÐ²úÆ·
-#define DIR_PARAM2//µç»ú·½ÏòÅäÖÃ
-#define MIN_SPEED_LOW//×îµÍËÙ£ºµÍ
-#define LIMIT_PARAM2//ÏÞÎ»ÅäÖÃ2 Ê¹ÓÃÓë7280ÏµÁÐ²úÆ·
-//#define REVERSE_TILT //ÌØÊâµç»ú
-#define PT_Type     0x1c71  //»úÆ÷ÐÍºÅ£¨16½øÖÆ
+#define PID_PARAM2//PIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½7280Ïµï¿½Ð²ï¿½Æ·
+#define RS_PARAM2//ï¿½ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½7280Ïµï¿½Ð²ï¿½Æ·
+#define DIR_PARAM2//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define MIN_SPEED_LOW//ï¿½ï¿½ï¿½ï¿½Ù£ï¿½ï¿½ï¿½
+#define LIMIT_PARAM2//ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½2 Ê¹ï¿½ï¿½ï¿½ï¿½7280Ïµï¿½Ð²ï¿½Æ·
+//#define REVERSE_TILT //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define PT_Type     0x1c71  //ï¿½ï¿½ï¿½ï¿½ï¿½ÍºÅ£ï¿½16ï¿½ï¿½ï¿½ï¿½
 #endif
 #ifdef FOC
-#define REVERSE_PAN //ÌØÊâµç»ú
-#define REVERSE_TILT //ÌØÊâµç»ú
+#define REVERSE_PAN //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define REVERSE_TILT //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif
 //#define Encoder_Position_BUF_A_LEN  64
 //#define Encoder_Position_BUF_B_LEN  32
@@ -106,44 +106,44 @@ extern u32 USART3_BAND;
 #define Encoder_Inversion   0x01
 extern u8 Pan_Encoder_Direction;
 extern u8 Tilt_Encoder_Direction;
-//Í¨ÓÃ²ÎÊý
-#define High_Leve   1   //Í¨ÓÃÒý½Å¸ßµçÆ½
-#define Low_Leve    0   //Í¨ÓÃÒý½ÅµÍµçÆ½
-#define Rated(a)    a   //Í¨ÓÃ³£Êý
+//Í¨ï¿½Ã²ï¿½ï¿½ï¿½
+#define High_Leve   1   //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ßµï¿½Æ½
+#define Low_Leve    0   //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ÅµÍµï¿½Æ½
+#define Rated(a)    a   //Í¨ï¿½Ã³ï¿½ï¿½ï¿½
 #define ON      Low_Leve
 #define OFF     High_Leve
-#define watcher_pause      1    //ÊØÍûÎ»ÔÝÍ£
-#define watcher_continue     0  //ÊØÍûÎ»¼ÌÐø
-//±àÂëÆ÷¶ÁÈ¡Ê±ÐòÑÓÊ±²ÎÊý
+#define watcher_pause      1    //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£
+#define watcher_continue     0  //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ê±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 #define Encoder_Delay_US    0x01
-//Í¨ÓÃ¶¨Ê±Æ÷²ÎÊý
+//Í¨ï¿½Ã¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define TIM10_ARR   20 - 1
 #define TIM10_PSC   8400 - 1
-//µ÷ËÙ¶¨Ê±Æ÷²ÎÊý
-#define Motor_arr   500 - 1   //¶¨Ê±Æ÷¼ÆÊýÖµ
-#define Motor_psc   8400 - 1    //¶¨Ê±Æ÷·ÖÆµÖµ
-//PWM¶¨Ê±Æ÷²ÎÊý
-#define Motor_PWM_arr   3999   //¶¨Ê±Æ÷¼ÆÊýÖµ
-#define Motor_PWM_psc   0    //¶¨Ê±Æ÷·ÖÆµÖµ
-#define Motor_PWM_Max   700     //PWMÏÞ¶¨×î´óµçÁ÷Öµ
+//ï¿½ï¿½ï¿½Ù¶ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define Motor_arr   500 - 1   //ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+#define Motor_psc   8400 - 1    //ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ÆµÖµ
+//PWMï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define Motor_PWM_arr   3999   //ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+#define Motor_PWM_psc   0    //ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ÆµÖµ
+#define Motor_PWM_Max   700     //PWMï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 #define Max_PWM     Motor_PWM_arr + 1
 #define Min_PWM     210
-//PIDÏµÊý
+//PIDÏµï¿½ï¿½
 #ifdef PID_PARAM1
-#define P_Kp  0.02     //±ÈÀýÏµÊý 20220606
-#define P_Ki  0.02      //»ý·ÖÏµÊý
-#define P_Kd  0.05      //Î¢·ÖÏµÊý
-#define T_Kp  0.10      //±ÈÀýÏµÊý
-#define T_Ki  0.05      //»ý·ÖÏµÊý
-#define T_Kd  0.08      //Î¢·ÖÏµÊý
+#define P_Kp  0.02     //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ 20220606
+#define P_Ki  0.02      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define P_Kd  0.05      //Î¢ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Kp  0.10      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Ki  0.05      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Kd  0.08      //Î¢ï¿½ï¿½Ïµï¿½ï¿½
 #else
 #ifdef PID_PARAM2
-#define P_Kp  0.05      //±ÈÀýÏµÊý
-#define P_Ki  0.02      //»ý·ÖÏµÊý
-#define P_Kd  0.08      //Î¢·ÖÏµÊý
-#define T_Kp  0.1      //±ÈÀýÏµÊý
-#define T_Ki  0.035      //»ý·ÖÏµÊý
-#define T_Kd  0.08      //Î¢·ÖÏµÊý
+#define P_Kp  0.05      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define P_Ki  0.02      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define P_Kd  0.08      //Î¢ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Kp  0.1      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Ki  0.035      //ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½
+#define T_Kd  0.08      //Î¢ï¿½ï¿½Ïµï¿½ï¿½
 #endif
 #endif
 #ifdef RS_PARAM1
@@ -238,30 +238,30 @@ extern double FOV;
 //                                  Parameters
 //
 //***********************************************************************************
-//×ÜÏßÍ¨Ñ¶
+//ï¿½ï¿½ï¿½ï¿½Í¨Ñ¶
 #define Unassigned_Address  0
 #define Assigned_Address    !Unassigned_Address
 extern u8 Assigned_Address_Flag;
-#define CAN_Bcast   0x0000//¹ã²¥µØÖ·
+#define CAN_Bcast   0x0000//ï¿½ã²¥ï¿½ï¿½Ö·
 extern u16 Local_CAN_StdId;
 extern u32 Local_CAN_ExtId;
-extern u8 Local_CAN_IDE;//±ê×¼±êÊ¶·û
-extern u8 Local_CAN_RTR;//Êý¾ÝÖ¡
+extern u8 Local_CAN_IDE;//ï¿½ï¿½×¼ï¿½ï¿½Ê¶ï¿½ï¿½
+extern u8 Local_CAN_RTR;//ï¿½ï¿½ï¿½ï¿½Ö¡
 extern u8 Local_CAN_DLC;
 extern u8 Local_CAN_BUF[8];
 //**********************************************************************
 #define Memory_Finger_NUM   20
 #define Memory_Data_NUM     100
-typedef struct /*´®¿ÚÊý¾Ý´«ÊäÊ¹ÓÃ*/
+typedef struct /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½*/
 {
-    u8 memory_finger;           //´æ´¢Ö¸Õë
-    u8 extract_finger;          //¶ÁÈ¡Ö¸Õë
-    u8 Statistic_number;        //ÄÚ´æ¿éÊ¹ÓÃÊý
+    u8 memory_finger;           //ï¿½æ´¢Ö¸ï¿½ï¿½
+    u8 extract_finger;          //ï¿½ï¿½È¡Ö¸ï¿½ï¿½
+    u8 Statistic_number;        //ï¿½Ú´ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½
     u32 Memory_command[Memory_Data_NUM];
     u32 Memory_Data[Memory_Data_NUM];
     u8 Memory_Data_1[Memory_Finger_NUM][Memory_Data_NUM];
 } Memory_Struct;
-extern u8 Axial;//Í¸´«±êÊ¶//µ÷Õû»¤ÕÕÖ§¼Ü
+extern u8 Axial;//Í¸ï¿½ï¿½ï¿½ï¿½Ê¶//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½
 extern u8 Delete_Preset_FLag;
 extern u16 Delete_Preset_Time;
 extern u8 Delete_Data_FLag;
@@ -370,21 +370,21 @@ typedef enum
 		Rotating,            
 		Skin_Fruit_ON,
 		Skin_Fruit_Pause,
-		Tracking_ON,					//»¨ÑùÉ¨Ãè¿ªÊ¼
+		Tracking_ON,					//ï¿½ï¿½ï¿½ï¿½É¨ï¿½è¿ªÊ¼
 		EEPROM_CHECK,
-		Auto_Tracking					//ÖÇÄÜ×·×Ù
+		Auto_Tracking					//ï¿½ï¿½ï¿½ï¿½×·ï¿½ï¿½
 }special_function_status;
 
 extern u8 Special_Function;
 extern u8 Watcher_Switch;
 extern u8 watcher_pause_state;
 extern u8 Tour_Num;
-extern u16 Tour_Time;//Ñ²¼ìÔ¤ÖÃÎ»Í£ÁôÊ±¼ä
+extern u16 Tour_Time;//Ñ²ï¿½ï¿½Ô¤ï¿½ï¿½Î»Í£ï¿½ï¿½Ê±ï¿½ï¿½
 extern u16 Tour_Speed_Pan;
 extern u16 Tour_Speed_Tilt;
 extern u8 Scan_Num;
-extern u16 Scan_Time_Left;//É¨ÃèÍ£ÁôÊ±¼ä
-extern u16 Scan_Time_Right;//É¨ÃèÍ£ÁôÊ±¼ä
+extern u16 Scan_Time_Left;//É¨ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½
+extern u16 Scan_Time_Right;//É¨ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½
 extern u16 Scan_Speed;
 extern u16 Watcher_Time;
 extern u16 Watcher_Speed;
@@ -439,10 +439,10 @@ extern u8 Speed_Set_Satus;
 #define Query_ZOOM              0x0055
 #define Query_ZOOM_Max          0x0155
 #define Query_ZOOM_Min          0x0255
-#define Query_Versions_PT       0x2808  //æŸ¥è?¢å›ºä»¶ç‰ˆæœ?
-#define Query_Type_PT           0x2810  //æŸ¥è??äº‘å°åž‹å·
-#define Query_Time_Current 0x2811 //æŸ¥è?¢å½“å‰æ—¶é—?
-#define Query_Encoder_PT        0x2812  //æŸ¥è?¢ç¼–ç å™¨åž‹å??
+#define Query_Versions_PT       0x2808  //æŸ¥ï¿½?ï¿½å›ºä»¶ç‰ˆï¿½?
+#define Query_Type_PT           0x2810  //æŸ¥ï¿½??äº‘å°åž‹å·
+#define Query_Time_Current 0x2811 //æŸ¥ï¿½?ï¿½å½“å‰æ—¶ï¿½?
+#define Query_Encoder_PT        0x2812  //æŸ¥ï¿½?ï¿½ç¼–ç å™¨åž‹ï¿½??
 #define Set_PID_Pan           0x3001
 #define Set_PID_Tilt          0x3002
 #define Setup_Filter            0x0412
@@ -466,12 +466,12 @@ extern u8 Speed_Set_Satus;
 #define Up_Sidedown                     0xa51f
 #define Limit_Pan_Switch							0xa521
 #define EEPROM_Return                   0xa523
-//ÓêË¢¹¦ÄÜ
+//ï¿½ï¿½Ë¢ï¿½ï¿½ï¿½ï¿½
 #define Wiper_UP										0xa551
 #define Wiper_Down									0xa552
 #define Wiper_ON										0xa553
 #define Wiper_Dir										0xa554
-#ifdef ZS //Õ×êÉ
+#ifdef ZS //ï¿½ï¿½ï¿½ï¿½
 #define Extract_Number_Require  0x4096
 extern u16 Extract_Number;
 #endif
@@ -513,18 +513,18 @@ typedef struct
 
 typedef struct
 {
-    double P_data_1;//¿ªÊ¼µãPÖµ
-    double P_data_2;//¿ªÊ¼µãTÖµ
-    double T_data_1;//½áÊøµãPÖµ
-    double T_data_2;//½áÊøµãTÖµ
-    int speed;//ËÙ¶È¼¶
+    double P_data_1;//ï¿½ï¿½Ê¼ï¿½ï¿½PÖµ
+    double P_data_2;//ï¿½ï¿½Ê¼ï¿½ï¿½TÖµ
+    double T_data_1;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PÖµ
+    double T_data_2;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TÖµ
+    int speed;//ï¿½Ù¶È¼ï¿½
     int speed_p;
     int speed_t;
-    int dir;//·½Ïò 0Ë³Ê±Õë 1ÄæÊ±Õë
-    double grads;//ÌÝ¶ÈÖµ
-    int status;//×´Ì¬Öµ 0Æô¶¯ 1ÔÝÍ£ 2Í£Ö¹
-    int situation;//µ±Ç°½øÐÐ²½Öè
-    double T_data_temp;//´¹Ö±½Ç¶ÈÖµÖÐ¼äÖµ
+    int dir;//ï¿½ï¿½ï¿½ï¿½ 0Ë³Ê±ï¿½ï¿½ 1ï¿½ï¿½Ê±ï¿½ï¿½
+    double grads;//ï¿½Ý¶ï¿½Öµ
+    int status;//×´Ì¬Öµ 0ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Í£ 2Í£Ö¹
+    int situation;//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
+    double T_data_temp;//ï¿½ï¿½Ö±ï¿½Ç¶ï¿½Öµï¿½Ð¼ï¿½Öµ
 		double P_data_pause;
 		double T_data_pause;
         u16 Zoom_pause;
@@ -544,15 +544,15 @@ typedef enum
 #endif
 
 #ifdef HY
-//ÏßÉ¨¹¦ÄÜ?
+//ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½?
 #define Scan_Stay_Time								0x73
 #define Scan_Border_Left            0x0011
 #define Scan_Border_Right           0x0013
 #define Start_Scan                  0x001B
 #define Delete_Scan                 0x001D
-//Ë®Æ½Ðý×ª
+//Ë®Æ½ï¿½ï¿½×ª
 #define Rotate_Contrary_Start				0x0016
-//Ä£·ÂÑ§Ï°¹¦ÄÜ
+//Ä£ï¿½ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½
 #define Imitate_Record							0x001F
 #define Imitate_Stop								0x0021
 #define Imitate_start								0x0023
@@ -601,14 +601,14 @@ typedef struct
 extern Scan_Data Sweep[6];
 typedef struct 
 {
-	double Up;							//ÉÏÏÞ
-	double	Down;						//ÏÂÏÞ
+	double Up;							//ï¿½ï¿½ï¿½ï¿½
+	double	Down;						//ï¿½ï¿½ï¿½ï¿½
 	u8	Id;							//ID
-	u8  Tilt_Dif;				//Ã¿´ÎÒÆ¶¯²îÖµ
-	int	Speed;						//ËÙ¶È
-	double Forerunner;				//ÏÈÐÐÕßÎ»ÖÃ
-	u8  Direction;					//·½Ïò
-	u8 	Statt_Mode;					//ÔËÐÐ×´Ì¬
+	u8  Tilt_Dif;				//Ã¿ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½Öµ
+	int	Speed;						//ï¿½Ù¶ï¿½
+	double Forerunner;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+	u8  Direction;					//ï¿½ï¿½ï¿½ï¿½
+	u8 	Statt_Mode;					//ï¿½ï¿½ï¿½ï¿½×´Ì¬
 }Skin;
  extern Skin Fruit;
 extern u8 Imitation_Process;
@@ -660,7 +660,7 @@ extern u8 Imitation_Process;
 #define Section_Border1             231
 #define Section_Border2             232
 #define Scan_Switch                 233
-#define Scan_Switch_1               234//É¨´óÓÚ180¶ÈÉÈÇø
+#define Scan_Switch_1               234//É¨ï¿½ï¿½ï¿½ï¿½180ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define Limit_Down_Set              235
 #define Limit_Up_Set              236
 #ifdef HY
@@ -668,7 +668,7 @@ extern u8 Imitation_Process;
 #define Imitate_Information					250
 #endif
 #ifdef ZS02
-#define Inversion                   253//µõ×°
+#define Inversion                   253//ï¿½ï¿½×°
 #endif
 extern u8 U2_switch;
 extern u8 Preset_Extract_Flag;
@@ -705,23 +705,23 @@ extern u8 Preset_Number;
 extern u8 Preset_Empty;
 #define Preset_Bytes_NUN    16
 #define Parameter_Bytes_NUN 8
-#define EEPROM_Parameter    0   //ÌØÊâÔ¤ÖÃÎ»´æ´¢ÔÚ0ºÅEEPROMÖÐ
-#define EEPROM_Preset       1   //ÓÃ»§Ô¤ÖÃÎ»´æ´¢ÔÚ1ºÅEEPROMÖÐ
+#define EEPROM_Parameter    0   //ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½æ´¢ï¿½ï¿½0ï¿½ï¿½EEPROMï¿½ï¿½
+#define EEPROM_Preset       1   //ï¿½Ã»ï¿½Ô¤ï¿½ï¿½Î»ï¿½æ´¢ï¿½ï¿½1ï¿½ï¿½EEPROMï¿½ï¿½
 //Encoder
 #define Encoder_Normal  0x00
 #define Encoder_Error   0x01
 #define Encoder_Drop    0x02
 extern u8 Pan_Encoder_State;
 extern u8 Tilt_Encoder_State;
-#define Circle_Value    360.000 //ÕûÈ¦½Ç¶ÈÖµ
+#define Circle_Value    360.000 //ï¿½ï¿½È¦ï¿½Ç¶ï¿½Öµ
 //#ifdef PT_LOAC_2215
-//#define Encoder_Range   262144  //±àÂëÆ÷Á¿³Ì
-//#define Angle_Accuracy  0.005  //½Ç¶È¾«¶È
+//#define Encoder_Range   262144  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define Angle_Accuracy  0.005  //ï¿½Ç¶È¾ï¿½ï¿½ï¿½
 //#else
-//#define Encoder_Range   262144  //±àÂëÆ÷Á¿³Ì
-//#define Angle_Accuracy  Circle_Value / Encoder_Range  //½Ç¶È¾«¶È
+//#define Encoder_Range   262144  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define Angle_Accuracy  Circle_Value / Encoder_Range  //ï¿½Ç¶È¾ï¿½ï¿½ï¿½
 //#endif
-#define Section_Range   4096    //±àÂëÆ÷·ÖÇøÁ¿³Ì
+#define Section_Range   4096    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 extern double Angle_Decimal;
 #define Tour_Scan_Accumulation  256
 extern u32 encoder_counter;
@@ -763,7 +763,7 @@ extern u8 Pan_Section_Counter;
 extern u8 Pan_Section_Counter_Check;
 extern u32 Pan_Current_Data;//0x80000
 extern u16 Pan_Encoder_Data;//
-extern u32 Pan_Encoder_Data_Last;//ÉÏµç±àÂëÆ÷Öµ
+extern u32 Pan_Encoder_Data_Last;//ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 extern u32 Pan_Machine_Origin;
 extern u32 Pan_Encoder_Position_Save;
 extern u32 Pan_Encoder_Position_Current;
@@ -780,7 +780,7 @@ extern u32 Tilt_Current_Data;//0x80000
 extern u32 Tilt_Current_Data_Last;
 extern u32 Tilt_Encoder_Position_Save;
 extern u16 Tilt_Encoder_Data;//
-extern u32 Tilt_Encoder_Data_Last;//ÉÏµç±àÂëÆ÷Öµ
+extern u32 Tilt_Encoder_Data_Last;//ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 extern u32 Tilt_Machine_Origin;
 extern u32 Tilt_Encoder_Position_Current;
 #define Pan_User_Limit_Enable   0xB1
@@ -796,21 +796,21 @@ extern u8 Pan_Soft_Limit_FLAG;
 //#define Tilt_User_Limit_Up      0x200  //45
 //#define Tilt_User_Limit_Down    0xe00  //315
 #ifdef LIMIT_PARAM1
-#define Tilt_Angle_Limit_Up      45.0   //20220222zhangxuezhi£¬ÓÉÔ­À´µÄ45.0¸ÄÎª60.0
-#define Tilt_Angle_Limit_Down    270.0  //20220222zhangxuezhi£¬ÓÉÔ­À´µÄ290.0¸ÄÎª275.0
-#define Tilt_Angle_Limit_Up_default      45.0   //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È£¬Èç¹û²»Éè¶¨ÏÞÎ»½Ç¶ÈÔò°´ÕÕ¸Ã½Ç¶È½øÐÐÅäÖÃ
-#define Tilt_Angle_Limit_Down_default    270.0  //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È
+#define Tilt_Angle_Limit_Up      45.0   //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½45.0ï¿½ï¿½Îª60.0
+#define Tilt_Angle_Limit_Down    270.0  //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½290.0ï¿½ï¿½Îª275.0
+#define Tilt_Angle_Limit_Up_default      45.0   //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Î»ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½Õ¸Ã½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define Tilt_Angle_Limit_Down_default    270.0  //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶ï¿½
 #else
 #ifdef LIMIT_PARAM2
 #define Tilt_Angle_Limit_Up      60.0   //
 #define Tilt_Angle_Limit_Down    300.0  //
-#define Tilt_Angle_Limit_Up_default      60.0   //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È£¬Èç¹û²»Éè¶¨ÏÞÎ»½Ç¶ÈÔò°´ÕÕ¸Ã½Ç¶È½øÐÐÅäÖÃ
-#define Tilt_Angle_Limit_Down_default    305.0  //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È
+#define Tilt_Angle_Limit_Up_default      60.0   //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Î»ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½Õ¸Ã½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define Tilt_Angle_Limit_Down_default    305.0  //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶ï¿½
 #else
 #define Tilt_Angle_Limit_Up      60.0   //
 #define Tilt_Angle_Limit_Down    300.0  //
-#define Tilt_Angle_Limit_Up_default      60.0   //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È£¬Èç¹û²»Éè¶¨ÏÞÎ»½Ç¶ÈÔò°´ÕÕ¸Ã½Ç¶È½øÐÐÅäÖÃ
-#define Tilt_Angle_Limit_Down_default    300.0  //20220222zhangxuezhi£¬Ôö¼ÓÄ¬ÈÏÏÞÎ»½Ç¶È
+#define Tilt_Angle_Limit_Up_default      60.0   //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Î»ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½Õ¸Ã½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define Tilt_Angle_Limit_Down_default    300.0  //20220222zhangxuezhiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶ï¿½
 #endif
 #endif
 extern double Tilt_Limit_Up;
@@ -849,7 +849,7 @@ extern u8 Origin_Machine_Record[8];
 //*******************************************************
 #define Pan_MAX_Sampling_Period_Position    436
 #define Tilt_MAX_Sampling_Period_Position   218
-//ç¼–ç å™¨å•åŒºå?½å??
+//ç¼–ç å™¨å•åŒºï¿½?ï¿½ï¿½??
 #define Encoder_Sector_Position 8192 / 2
 #define pi 3.14159265f
 //typedef struct Encoder_Position_BUF
@@ -881,11 +881,11 @@ extern u8 Place_InOut_Tilt;
 extern double Pan_SetAngle_RetardSection;
 extern double Tilt_SetAngle_RetardSection;
 //#ifdef PT_LOAC_2215
-//#define Pan_SetAngle_RetardSection  80//½Ç¶ÈÉè¶¨¼õËÙÇø¼ä
-//#define Tilt_SetAngle_RetardSection 30//½Ç¶ÈÉè¶¨¼õËÙÇø¼ä
+//#define Pan_SetAngle_RetardSection  80//ï¿½Ç¶ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define Tilt_SetAngle_RetardSection 30//ï¿½Ç¶ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //#else
-//#define Pan_SetAngle_RetardSection   16//½Ç¶ÈÉè¶¨¼õËÙÇø¼ä
-//#define Tilt_SetAngle_RetardSection   8//½Ç¶ÈÉè¶¨¼õËÙÇø¼ä
+//#define Pan_SetAngle_RetardSection   16//ï¿½Ç¶ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//#define Tilt_SetAngle_RetardSection   8//ï¿½Ç¶ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //#endif
 extern float ratio_add;
 extern float ratio_subtract_pan;
@@ -971,7 +971,7 @@ void Pend_Information_Function_TX(Memory_Struct *TASK_Communication_Memory);
 void Post_Information_Function_CAN(OS_SEM TASK_SEM,Memory_Struct *TASK_Communication_Memory,u8 *data,u8 start,u8 end);
 void Pend_Information_Function(Memory_Struct *TASK_Communication_Memory,FNC abc);
 u8 USART_DMA_Send_Data(DMA_Stream_TypeDef* DMAy_Streamx,u8 *tx_buf,u8 *data,u8 length);
-u8 Check_Sum(u8 *data,u8 start,u8 end);//ºÍ¼ÆËã
+u8 Check_Sum(u8 *data,u8 start,u8 end);//ï¿½Í¼ï¿½ï¿½ï¿½
 int My_strlen(char *src);
 //Delays
 void Delay_xUS(u16 us);

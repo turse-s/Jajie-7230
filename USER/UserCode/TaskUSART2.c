@@ -37,7 +37,7 @@ void Task_USART2_RX(void *p)
         if(U2_switch)
         {
             USART2_RX_Function();
-        }
+        } 
 #else
 //				Pend_Information_Function(&USART2_RX_BOX,USART2_RX_Function);
 #endif
@@ -160,7 +160,7 @@ void USART2_RX_Function(void)
         USART2_dispose_data_pointer = USART2_dispose_data_pointer % DMA_USART2_RX_BUF_SIZE;
     }
 }
-void    USART2_RX_Analyze(void)
+void USART2_RX_Analyze(void)
 {
         //Q_ERR err_q;
         u16 Down_CMD = 0;

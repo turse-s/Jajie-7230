@@ -439,7 +439,7 @@ int Motor_Tilt_Coordinate_Motion(u16 Motion_Mode,double TargetAngle,double Curre
             Tilt_Timer_Start = 1;
         }
         out_speed = //300dif_err * 1000 + 5;//pow(dif_err,2) * 1000 + 5;//
-				75 * fabs(dif_err);//pow(dif_err,2) * k + b;
+				60 * fabs(dif_err);//pow(dif_err,2) * k + b;
     }
     else
     {
@@ -523,7 +523,7 @@ float Motor_Pan_PWM_PID(int TargetSpeed,int CurrentSpeed,double Real_Angle,doubl
     P_Pan = Pan_Kp * (P_A - P_A_next);
     I_Pan = Pan_Ki * P_A;
 #else
-    P_I += P_A;
+	P_I += P_A;
     P_Pan = Pan_Kp * P_A;
     I_Pan = Pan_Ki * P_I;
 #endif
@@ -609,7 +609,7 @@ float Motor_Tilt_PWM_PID(int TargetSpeed,int CurrentSpeed,double Real_Angle,doub
 				 Tilt_CMD_Count = 1;
 		return 0;
 #else
-    if (TargetSpeed * CurrentSpeed < 0 && abs(CurrentSpeed) > 50)
+    if (TargetSpeed * CurrentSpeed < 0)
     {
         T_A = 0;
         T_I = 0 ;
@@ -637,6 +637,7 @@ float Motor_Tilt_PWM_PID(int TargetSpeed,int CurrentSpeed,double Real_Angle,doub
     I_Tilt = Tilt_Ki * T_I;
 #else
     T_I += T_A;
+
     P_Tilt = Tilt_Kp * T_A;
     I_Tilt = Tilt_Ki * T_I;
 #endif

@@ -44,7 +44,7 @@ void Task_Analyze(void *p)
 void Analyze_Function(void)
 {
 		u16 Down_CMD = 0;
-		u32 Down_Data = 0;
+		u32 Down_Data = 0;         
 		Down_CMD = Analyze_BOX.Memory_command[Analyze_BOX.extract_finger];
 		Down_Data = Analyze_BOX.Memory_Data[Analyze_BOX.extract_finger];
 		CMD_Analyze(Down_CMD,Down_Data,1);
@@ -58,7 +58,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 		u8 send_data[30] = {0};
 		u32 pBuffer[2];
 #ifdef ZS02
-    u8 USART_x = 0;//ZS²»Í¸´«
+    u8 USART_x = 0;//ZSï¿½ï¿½Í¸ï¿½ï¿½
     int ZS_speed = 32;
 #else
     u8 USART_x = 3;
@@ -74,20 +74,20 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     double TTA = 0;
         if (!Axial)
         {
-           rocker_mark = Rocker_Select(Down_CMD,Down_Data);//Ò¡¸Ë¿ØÖÆ
-            if(Down_CMD == Direction_Stop)                          //ÅÐ¶ÏÐ­ÒéÊÇ·ñÎªVISCAÐ­Òé
+           rocker_mark = Rocker_Select(Down_CMD,Down_Data);//Ò¡ï¿½Ë¿ï¿½ï¿½ï¿½
+            if(Down_CMD == Direction_Stop)                          //ï¿½Ð¶ï¿½Ð­ï¿½ï¿½ï¿½Ç·ï¿½ÎªVISCAÐ­ï¿½ï¿½
             {
                 if (USART3_Protocol_Type == Protocol_VISCA)
 								{
-										memcpy(send_data,CAM_Zoom_Stop,6);                              //°´Ð­ÒéÄÚÈÝÌî³ä
+										memcpy(send_data,CAM_Zoom_Stop,6);                              //ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 										send_len = 6;
 								}
             }
-            USART_x = 3;//´®¿Ú3
+            USART_x = 3;//ï¿½ï¿½ï¿½ï¿½3
         }
         else
         {
-            USART_x = 3;//¼¤¹âµÆµ÷½Ú¼ÜÍ¸´«¸ø3¿Ú
+            USART_x = 3;//ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½Ú¼ï¿½Í¸ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½
         }
 #ifdef HY
 				HuanYuFunctions(Down_CMD,Down_Data);
@@ -100,7 +100,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     case AUX_Switch_ON:
     {
 #ifdef ZS02
-//        if ((Down_Data & 0xff) == 0x0a)//10ºÅ¸¨Öú¿ª¹Ø×÷ÎªÉÏµç×ÔÆô¶¯Î»ÖÃ
+//        if ((Down_Data & 0xff) == 0x0a)//10ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 //				{
 //						if (POST_Switch)
 //						{
@@ -121,12 +121,12 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 //				}
 //				else
 //				{
-//						USART_x = 3;//´®¿Ú3
+//						USART_x = 3;//ï¿½ï¿½ï¿½ï¿½3
 //				}
-				USART_x = 2;//´®¿Ú3
+				USART_x = 2;//ï¿½ï¿½ï¿½ï¿½3
 #else
 						
-				USART_x = 1;//´®¿Ú1
+				USART_x = 1;//ï¿½ï¿½ï¿½ï¿½1
 #endif
 #ifdef AUX_VISCA
 				switch(Down_Data & 0xff)
@@ -179,10 +179,10 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 #ifdef ZS02        
 				if ((Down_Data & 0xff) != 0x0a)
 				{
-						USART_x = 2;//´®¿Ú3
+						USART_x = 2;//ï¿½ï¿½ï¿½ï¿½3
 				}
 #else
-						USART_x = 1;//´®¿Ú3
+						USART_x = 1;//ï¿½ï¿½ï¿½ï¿½3
 #endif
 #ifdef AUX_VISCA
 				switch(Down_Data & 0xff)
@@ -317,7 +317,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         }
         USART_x = 3;
         break;
-//          ¼¤¹âµÆ²Ù×÷
+//          ï¿½ï¿½ï¿½ï¿½Æ²ï¿½ï¿½ï¿½
 //      case Laser_ONOFF://             0x0101
 //          memcpy(send_data,laser_onoff_cmd,send_len);
 //          send_data[4] = Down_Data >> 8;
@@ -375,7 +375,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         break;
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
-																											//Ô¤ÖÃÎ»¹¦ÄÜ
+																											//Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
     case Preset_Set:
@@ -384,8 +384,8 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 #ifdef ZS02
             if((Down_Data < 200 && Down_Data != 103 && Down_Data != 104) || (Down_Data > 256 && Down_Data < 2000))
 #else
-//if((Down_Data < 200 && Down_Data != 105 && Down_Data != 111 && Down_Data != 114 && Down_Data != 116) || (Down_Data > 256 && Down_Data < 2000))    //105,111,114,116Îª¼¤¹âµ÷½Ú¼ÜµÄÔ¤ÖÃÎ»ÓÉÓÚ²»Ê¹ÓÃËùÒÔ×¢ÊÍµô
-            if((Down_Data < 200 ) || (Down_Data > 256 && Down_Data < 2000)) //È¡ÏûµôÁË¼¤¹âµÆÔ¤ÖÃÎ»£¬±ØÒªÊ±¿É½«ÉÏÃæµÄ×¢ÊÍÐÐ»Ö¸´£¬²¢½«´ËÐÐ×¢ÊÍ
+//if((Down_Data < 200 && Down_Data != 105 && Down_Data != 111 && Down_Data != 114 && Down_Data != 116) || (Down_Data > 256 && Down_Data < 2000))    //105,111,114,116Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼Üµï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½Ú²ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½Íµï¿½
+            if((Down_Data < 200 ) || (Down_Data > 256 && Down_Data < 2000)) //È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ÒªÊ±ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ð»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 #endif
             {
 								memcpy(PT_Position_Record,Position_Data_Format,Preset_Bytes_NUN);
@@ -408,7 +408,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         break;
     case Preset_Delete:
         //if((Down_Data < 200 && Down_Data != 105 && Down_Data != 111 && Down_Data != 114 && Down_Data != 116) || (Down_Data > 256 && Down_Data < 2000))
-        if((Down_Data < 200 ) || (Down_Data > 256 && Down_Data < 2000)) //È¡ÏûµôÁË¼¤¹âµÆÔ¤ÖÃÎ»£¬±ØÒªÊ±¿É½«ÉÏÃæµÄ×¢ÊÍÐÐ»Ö¸´£¬²¢½«´ËÐÐ×¢ÊÍ
+        if((Down_Data < 200 ) || (Down_Data > 256 && Down_Data < 2000)) //È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ÒªÊ±ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ð»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
         {
             EEPRom_WriteOneByte(EEPROM_Preset,(Down_Data - 1) * Preset_Bytes_NUN,0xff);
         }
@@ -424,7 +424,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 ////            Down_Data = Down_Data >> 8;
 //#endif
         //if((Down_Data < 200 && Down_Data != 105 && Down_Data != 111 && Down_Data != 114 && Down_Data != 116) || (Down_Data > 256 && Down_Data < 2000))
-        if((Down_Data < 200 && Down_Data != 103 && Down_Data != 104 && Down_Data != 99) || (Down_Data > 256 && Down_Data < 2000)) //È¡ÏûµôÁË¼¤¹âµÆÔ¤ÖÃÎ»£¬±ØÒªÊ±¿É½«ÉÏÃæµÄ×¢ÊÍÐÐ»Ö¸´£¬²¢½«´ËÐÐ×¢ÊÍ
+        if((Down_Data < 200 && Down_Data != 103 && Down_Data != 104 && Down_Data != 99) || (Down_Data > 256 && Down_Data < 2000)) //È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ÒªÊ±ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ð»Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
         {
             Stay_Time = 0;
             Special_Function = Tour_Scan_Disable;
@@ -527,7 +527,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 				}				
         if(Pan_Target_Angle > Circle_Value)
         {
-            Pan_Target_Angle = Pan_Target_Angle - Circle_Value;//¸¡µãÐÍ
+            Pan_Target_Angle = Pan_Target_Angle - Circle_Value;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         
         Pan_Location_Speed = Pan_Ultimate_MaxSpeed*Speed_Scale_Pan;
@@ -540,21 +540,21 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         }
         else
         {
-            if(Tilt_Encoder_Direction == Encoder_Inversion)     //×ø±ê·´Ïò´¦Àí
+            if(Tilt_Encoder_Direction == Encoder_Inversion)     //ï¿½ï¿½ï¿½ê·´ï¿½ï¿½ï¿½ï¿½
             {
                 TTA = Tilt_Origin_User - ((double)Down_Data) / Angle_Decimal;
                 if(TTA < 0)
                 {
-                    TTA = Circle_Value + TTA;//¸¡µãÐÍ
+                    TTA = Circle_Value + TTA;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 }
             }
             else
             {
-                TTA = ((double)Down_Data) / Angle_Decimal + Tilt_Origin_User;//¸¡µãÐÍ
+                TTA = ((double)Down_Data) / Angle_Decimal + Tilt_Origin_User;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 //TTA = Tilt_Origin_User - ((double)Down_Data) / Angle_Decimal;
                 if(TTA > Circle_Value)
                 {
-                    TTA = TTA - Circle_Value;//¸¡µãÐÍ
+                    TTA = TTA - Circle_Value;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 }
             }
         }
@@ -567,7 +567,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 							}
 							else
 							{
-										Tilt_Target_Angle = TTA;        //½«ÁÙÊ±¼ÆËãÖµ´«µÝ¸øÄ¿±ê½Ç¶È
+										Tilt_Target_Angle = TTA;        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ý¸ï¿½Ä¿ï¿½ï¿½Ç¶ï¿½
                     Tilt_Motion_Mode = Location_Motion;
                     Place_InOut_Tilt = OutPlace;
 							}
@@ -578,14 +578,14 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         break;
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
-																											//²éÑ¯²Ù×÷
+																											//ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
     case Query_Angle_Pan:
         Pan_Angle = pan_angle_query;
         send_data[2] = 0x00;
         send_data[3] = 0x59;
-        if(Return_Data_Type == Return_Position)//±àÂëÆ÷Öµ»Ø´«
+        if(Return_Data_Type == Return_Position)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ø´ï¿½
         {
             if(pan_encoder_type == Encoder_AS5600)
             {
@@ -603,9 +603,9 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
                 send_len = 8;
             }
         }
-        else//½Ç¶È»Ø´«
+        else//ï¿½Ç¶È»Ø´ï¿½
         {
-            if(Angle_Accuracy_Flag)//¸ß¾«¶ÈÐ­Òé
+            if(Angle_Accuracy_Flag)//ï¿½ß¾ï¿½ï¿½ï¿½Ð­ï¿½ï¿½
             {
                 send_data[4] = ((u32)(Pan_Angle * 1000)) >> 16;
                 send_data[5] = ((u32)(Pan_Angle * 1000)) >> 8;
@@ -639,7 +639,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         Tilt_Angle = tilt_angle_query;
         send_data[2] = 0x00;
         send_data[3] = 0x5b;
-        if(Return_Data_Type == Return_Position)//±àÂëÆ÷Öµ»Ø´«
+        if(Return_Data_Type == Return_Position)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ø´ï¿½
         {
             if(tilt_encoder_type == Encoder_AS5600)
             {
@@ -657,9 +657,9 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
                 send_len = 8;
             }
         }
-        else//½Ç¶È»Ø´«
+        else//ï¿½Ç¶È»Ø´ï¿½
         {
-            if(Angle_Accuracy_Flag)//¸ß¾«¶ÈÐ­Òé
+            if(Angle_Accuracy_Flag)//ï¿½ß¾ï¿½ï¿½ï¿½Ð­ï¿½ï¿½
             {
                 send_data[4] = ((u32)(Tilt_Angle * 1000)) >> 16;
                 send_data[5] = ((u16)(Tilt_Angle * 1000)) >> 8;
@@ -966,10 +966,10 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         break;
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
-																											//ÌØÊâ¹¦ÄÜ
+																											//ï¿½ï¿½ï¿½â¹¦ï¿½ï¿½
 			//*******************************************************************************************************************
 			//*******************************************************************************************************************
-   case Origin_Machine:            //ÉèÖÃ»úÆ÷Ô­µã
+   case Origin_Machine:            //ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ô­ï¿½ï¿½
     {
         if (Down_Data == 0x0001)
         {
@@ -1034,7 +1034,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         }
     }
     break;
-    case Clear_Parameter_Presets:            //Çå³ýÓÃ»§²ÎÊýºÍÔ¤ÖÃÎ»
+    case Clear_Parameter_Presets:            //ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»
     {
         if (Down_Data == 0x0001)
         {
@@ -1047,14 +1047,14 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             {
                 EEPRom_WriteDataLen(EEPROM_Preset,i,ERASE_EE_Preset,Preset_Bytes_NUN);
                 //*****************************
-                //Î¹¹·
+                //Î¹ï¿½ï¿½
                 IWDG_ReloadCounter();
             }
             for(j = 1; j < EE_TYPE / Parameter_Bytes_NUN; j ++)
             {
                 EEPRom_WriteDataLen(EEPROM_Parameter,j,ERASE_EE_Parameter,Parameter_Bytes_NUN);
                 //*****************************
-                //Î¹¹·
+                //Î¹ï¿½ï¿½
                 IWDG_ReloadCounter();
             }
             delay_us(10000);
@@ -1062,7 +1062,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         }
     }
     break;
-//    case Clear_Flash:                //²Á³ýFLSH
+//    case Clear_Flash:                //ï¿½ï¿½ï¿½ï¿½FLSH
 //    {
 //        if (Down_Data == 0x0001)
 //        {
@@ -1162,7 +1162,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             }
         }
         break;
-    case Tilt_Angle_Direction://¸©Ñö·´×ªÖ¸Áî
+    case Tilt_Angle_Direction://ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªÖ¸ï¿½ï¿½
         if((Down_Data & 0xff) == 0xff)
         {
             send_data[5] = Tilt_Encoder_Direction;
@@ -1185,7 +1185,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             EEPRom_WriteDataLen(EEPROM_Parameter,Tilt_Angle_Direction_EE,PT_Position_Record,Parameter_Bytes_NUN);
         }
         break;
-    case Set_PID_Pan://Ë®Æ½PIDµ÷ÊÔ
+    case Set_PID_Pan://Ë®Æ½PIDï¿½ï¿½ï¿½ï¿½
         Pan_Kp = (Down_Data >> 8);
         Pan_Ki = (Down_Data & 0xff);
         PT_Position_Record[5] = Pan_Kd;
@@ -1195,7 +1195,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         Pan_Kp = Pan_Kp / 100;
         Pan_Ki = Pan_Ki / 100;
         break;
-    case Set_PID_Tilt://¸©ÑöPIDµ÷ÊÔ
+    case Set_PID_Tilt://ï¿½ï¿½ï¿½ï¿½PIDï¿½ï¿½ï¿½ï¿½
         Tilt_Kp = (Down_Data >> 8);
         Tilt_Ki = (Down_Data & 0xff);
         PT_Position_Record[2] = Tilt_Kd;
@@ -1205,7 +1205,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         Tilt_Kp =   Tilt_Kp / 1000;
         Tilt_Ki = Tilt_Ki / 1000;
         break;
-    case Setup_Filter://ÂË²¨Æ÷ÉèÖÃ
+    case Setup_Filter://ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if((Down_Data >> 8) == 0)
         {
             pan_data.Main_Switch = 0;
@@ -1232,24 +1232,24 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         break;
     case Stop_U2:
     {
-        Pan_Motion_Mode = Rocker_Motion;                                    //ÉèÖÃË®Æ½Ò¡¸ËÄ£Ê½
-        Tilt_Motion_Mode = Rocker_Motion;                                   //ÉèÖÃ´¹Ö±Ò¡¸ËÄ£Ê½
-        Pan_Target_Speed = 0;                                               //Ë®Æ½Ä¿±êËÙ¶È³õÊ¼»¯
-        Tilt_Target_Speed = 0;                                              //´¹Ö±Ä¿±êËÙ¶È³õÊ¼»¯
-        watcher_pause_state = watcher_continue;                 //ÊØÍûÎ»ÔÝÍ£×´Ì¬¸ÄÎª¡®¼ÌÐø¡¯
-        Special_Function = Tour_Scan_Disable;                               //Í£Ö¹Ñ²¼ì
+        Pan_Motion_Mode = Rocker_Motion;                                    //ï¿½ï¿½ï¿½ï¿½Ë®Æ½Ò¡ï¿½ï¿½Ä£Ê½
+        Tilt_Motion_Mode = Rocker_Motion;                                   //ï¿½ï¿½ï¿½Ã´ï¿½Ö±Ò¡ï¿½ï¿½Ä£Ê½
+        Pan_Target_Speed = 0;                                               //Ë®Æ½Ä¿ï¿½ï¿½ï¿½Ù¶È³ï¿½Ê¼ï¿½ï¿½
+        Tilt_Target_Speed = 0;                                              //ï¿½ï¿½Ö±Ä¿ï¿½ï¿½ï¿½Ù¶È³ï¿½Ê¼ï¿½ï¿½
+        watcher_pause_state = watcher_continue;                 //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        Special_Function = Tour_Scan_Disable;                               //Í£Ö¹Ñ²ï¿½ï¿½
         Stay_Time = 0;
-        if(USART3_Protocol_Type == Protocol_VISCA)                          //ÅÐ¶ÏÐ­ÒéÊÇ·ñÎªVISCAÐ­Òé
+        if(USART3_Protocol_Type == Protocol_VISCA)                          //ï¿½Ð¶ï¿½Ð­ï¿½ï¿½ï¿½Ç·ï¿½ÎªVISCAÐ­ï¿½ï¿½
         {
-            memcpy(send_data,CAM_Zoom_Stop,6);                              //°´Ð­ÒéÄÚÈÝÌî³ä
+            memcpy(send_data,CAM_Zoom_Stop,6);                              //ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             send_len = 6;
         }
-        USART_x = 3;//´®¿Ú3
+        USART_x = 3;//ï¿½ï¿½ï¿½ï¿½3
         U2_switch = (Down_Data & 0xff);
     }break;
-    case Adaptation:                                                                                //µç»úËÙ¶È×Ô¼ì
+    case Adaptation:                                                                                //ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Ô¼ï¿½
     {
-		watcher_pause_state = watcher_pause;    //ÊØÍûÎ»ÔÝÍ£×´Ì¬¸ÄÎª¡®ÔÝÍ£¡¯
+		watcher_pause_state = watcher_pause;    //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½
         Pan_Motion_Mode = Rocker_Motion;
         Tilt_Motion_Mode = Rocker_Motion;
         Tilt_Target_Speed = 0;
@@ -1279,7 +1279,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
                 Scale_Velocity_Tilt = 1.1;
                 Speed_Scale_Pan = 1.0;
                 Speed_Scale_Tilt = 1.0;
-                Speed_Set_Satus = 1;//ËÙ¶ÈÉèÖÃ±êÖ¾Î»
+                Speed_Set_Satus = 1;//ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½Ã±ï¿½Ö¾Î»
 
                     PT_Position_Record[1] = (Pan_Ultimate_MaxSpeed >> 8)  & 0xff;
                     PT_Position_Record[2] = Pan_Ultimate_MaxSpeed & 0xff;
@@ -1300,7 +1300,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             }        
          }
     }break;
-    case Speed_Set:                                                                                 //ËÙ¶È±ÈÀýÉèÖÃ
+    case Speed_Set:                                                                                 //ï¿½Ù¶È±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Speed_Scale_Pan = ((Down_Data >> 8) > 100) ? 1.0f : (float)(Down_Data >> 8) / 100.0f;
         Speed_Scale_Tilt = ((Down_Data & 0xff) > 100) ? 1.0f : (float)(Down_Data & 0xff) / 100.0f;
@@ -1309,7 +1309,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         EEPRom_WriteDataLen(EEPROM_Parameter,(Max_Speed),PT_Position_Record,Preset_Bytes_NUN);
     }
     break;
-    case Extract_Number_Require://²éÑ¯Ô¤ÖÃÎ»¾ÍÎ»Çé¿ö
+    case Extract_Number_Require://ï¿½ï¿½Ñ¯Ô¤ï¿½ï¿½Î»ï¿½ï¿½Î»ï¿½ï¿½ï¿½
 #ifdef ZS    
 //            if (Extract_Number)
 //            {
@@ -1333,7 +1333,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     break;
 
 #ifdef RV
-     case Return_Intime_Visca://viscaÊµÊ±»Ø´«
+     case Return_Intime_Visca://viscaÊµÊ±ï¿½Ø´ï¿½
     
             //Pan_Current_Angle_User;
 //		#ifdef ZS
@@ -1347,22 +1347,22 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 //            send_data[4] = ((u16)(Pan_Current_Angle_User * 100)) >> 12;
 //            send_data[5] = (((u16)(Pan_Current_Angle_User * 100)) >> 8) &0x0f;
 //            send_data[6] = (((u16)(Pan_Current_Angle_User * 100)) &0xff) >> 4;
-//            send_data[7] = (((u16)(Pan_Current_Angle_User * 100)) &0xff)&0x0f;  //Ë®Æ½ËÄÎ»µ¥¶À
+//            send_data[7] = (((u16)(Pan_Current_Angle_User * 100)) &0xff)&0x0f;  //Ë®Æ½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 //            
 //            send_data[8] = ((u16)(Tilt_Current_Angle_User * 100)) >> 12;
 //            send_data[9] = (((u16)(Tilt_Current_Angle_User * 100)) >> 8) &0x0f;
 //            send_data[10] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff) >> 4;
-//            send_data[11] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff)&0x0f; //´¹Ö±ËÄÎ»µ¥¶À
+//            send_data[11] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff)&0x0f; //ï¿½ï¿½Ö±ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 //		        
 //						send_data[12] = ((u16)pan_data.speed) >> 12;
 //            send_data[13] = (((u16)pan_data.speed) >> 8) &0x0f;
 //            send_data[14] = (((u16)pan_data.speed) &0xff) >> 4;
-//            send_data[15] = (((u16)pan_data.speed) &0xff)&0x0f; //Ë®Æ½ËÙ¶ÈËÄÎ»µ¥¶À
+//            send_data[15] = (((u16)pan_data.speed) &0xff)&0x0f; //Ë®Æ½ï¿½Ù¶ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 //						
 //						send_data[16] = ((u16)tilt_data.speed) >> 12;
 //            send_data[17] = (((u16)tilt_data.speed) >> 8) &0x0f;
 //            send_data[18] = (((u16)tilt_data.speed) &0xff) >> 4;
-//            send_data[19] = (((u16)tilt_data.speed) &0xff)&0x0f; //´¹Ö±ËÙ¶Èµ¥¶À
+//            send_data[19] = (((u16)tilt_data.speed) &0xff)&0x0f; //ï¿½ï¿½Ö±ï¿½Ù¶Èµï¿½ï¿½ï¿½
 //            
 //            send_data[20] = 0xFF;
 //						
@@ -1376,12 +1376,12 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             send_data[4] = ((u16)(Pan_Current_Angle_User * 100)) >> 12;
             send_data[5] = (((u16)(Pan_Current_Angle_User * 100)) >> 8) &0x0f;
             send_data[6] = (((u16)(Pan_Current_Angle_User * 100)) &0xff) >> 4;
-            send_data[7] = (((u16)(Pan_Current_Angle_User * 100)) &0xff)&0x0f;  //Ë®Æ½ËÄÎ»µ¥¶À
+            send_data[7] = (((u16)(Pan_Current_Angle_User * 100)) &0xff)&0x0f;  //Ë®Æ½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
             
             send_data[8] = ((u16)(Tilt_Current_Angle_User * 100)) >> 12;
             send_data[9] = (((u16)(Tilt_Current_Angle_User * 100)) >> 8) &0x0f;
             send_data[10] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff) >> 4;
-            send_data[11] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff)&0x0f; //´¹Ö±ËÄÎ»µ¥¶À
+            send_data[11] = (((u16)(Tilt_Current_Angle_User * 100)) &0xff)&0x0f; //ï¿½ï¿½Ö±ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
             
             send_data[12] = 0xFF;
             send_len = 13;
@@ -1395,7 +1395,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
         }break;
         case Up_Sidedown:
         {
-            PTZ_Inverted = Down_Data & 0xFF;//µ¹×°1Õý×°0
+            PTZ_Inverted = Down_Data & 0xFF;//ï¿½ï¿½×°1ï¿½ï¿½×°0
             if (PTZ_Inverted == 1)
             {
                 Pan_Encoder_Direction = Encoder_Forward;
@@ -1433,7 +1433,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 		{
 				USART_x = 1;
 		}break;		
-//        case 0xff01://¸ü¸Ä´®¿Ú1²¨ÌØÂÊ
+//        case 0xff01://ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //        {
 //            u8 aa = 0,bc[8]= {0};
 //            USART1_DISABLE();
@@ -1447,7 +1447,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 //            aa = EEPRom_ReadOneByte(EEPROM_Parameter,(USART1_BAUDRATE - 1) * Parameter_Bytes_NUN);
 //            EEPRom_ReadDataLen(EEPROM_Parameter,USART1_BAUDRATE,bc,Parameter_Bytes_NUN);
 //        }break;
-//        case 0xff02://¸ü¸Ä´®¿Ú2²¨ÌØÂÊ
+//        case 0xff02://ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //        {
 //            USART2_DISABLE();
 //            USART2_BAND = Down_Data;
@@ -1458,7 +1458,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 //            EEPRom_WriteDataLen(EEPROM_Parameter,USART2_BAUDRATE,PT_Position_Record,Parameter_Bytes_NUN);
 //            USART2_INT_Init(USART2_BAND);
 //        }break;
-//        case 0xff03://¸ü¸Ä´®¿Ú3²¨ÌØÂÊ
+//        case 0xff03://ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //        {
 //            USART3_DISABLE();
 //            USART3_BAND = Down_Data;
@@ -1488,7 +1488,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 				}			
             if(Pan_Target_Angle > 360.0)
             {
-                Pan_Target_Angle = Pan_Target_Angle - 360.0;//¸¡µãÐÍ
+                Pan_Target_Angle = Pan_Target_Angle - 360.0;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             }
             Pan_Location_Speed = abs(Speed_Level_Pan(Down_CMD & 0xff00,0));
 #ifdef ZS
@@ -1521,21 +1521,21 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
             }
             else
             {
-                if(Tilt_Encoder_Direction == Encoder_Inversion)     //×ø±ê·´Ïò´¦Àí
+                if(Tilt_Encoder_Direction == Encoder_Inversion)     //ï¿½ï¿½ï¿½ê·´ï¿½ï¿½ï¿½ï¿½
                 {
                     TTA = Tilt_Origin_User - ((double)Down_Data) / Angle_Decimal;
                     if(TTA < 0)
                     {
-                        TTA = Circle_Value + TTA;//¸¡µãÐÍ
+                        TTA = Circle_Value + TTA;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     }
                 }
                 else
                 {
-                    TTA = ((double)Down_Data) / Angle_Decimal + Tilt_Origin_User;//¸¡µãÐÍ  zxz 20220927 ½µ¸ÃÐÐÈ¥µô¸ÄÎªÏÂÒ»ÐÐ TTA = ((double)Down_Data) / Angle_Decimal;
+                    TTA = ((double)Down_Data) / Angle_Decimal + Tilt_Origin_User;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  zxz 20220927 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ò»ï¿½ï¿½ TTA = ((double)Down_Data) / Angle_Decimal;
                     //TTA = Tilt_Origin_User - ((double)Down_Data) / Angle_Decimal;
                     if(TTA > Circle_Value)
                     {
-                        TTA = TTA - Circle_Value;//¸¡µãÐÍ
+                        TTA = TTA - Circle_Value;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     }
                 }
             }
@@ -1549,7 +1549,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
 							}
 							else
 							{
-										Tilt_Target_Angle = TTA;        //½«ÁÙÊ±¼ÆËãÖµ´«µÝ¸øÄ¿±ê½Ç¶È
+										Tilt_Target_Angle = TTA;        //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ý¸ï¿½Ä¿ï¿½ï¿½Ç¶ï¿½
                     Tilt_Motion_Mode = Location_Motion;
                     Place_InOut_Tilt = OutPlace;
 							}
@@ -1718,7 +1718,7 @@ void CMD_Analyze(u16 Down_CMD,u32 Down_Data,int usart)
     //*****************************************
 }
 //*************************************************************************
-//ÌØÊâÔ¤ÖÃÎ»
+//ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»
 u8 PT_Scan1,PT_Scan2;
 u8 Scan_Border1[8],Scan_Border2[8];
 void Special_Preset_Set(u16 num)
@@ -1749,7 +1749,7 @@ void Special_Preset_Set(u16 num)
 //    }
 //    break;
 #endif
-    case Origin_Pan:                  //201ÉèÖÃË®Æ½Ô­µã
+    case Origin_Pan:                  //201ï¿½ï¿½ï¿½ï¿½Ë®Æ½Ô­ï¿½ï¿½
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[2] = (u32)(Pan_Real_Angle * 1000) >> 16;
@@ -1760,7 +1760,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Origin_Pan,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Origin_Tilt:                 //202ÉèÖÃ´¹Ö±Ô­µã
+    case Origin_Tilt:                 //202ï¿½ï¿½ï¿½Ã´ï¿½Ö±Ô­ï¿½ï¿½
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[5] = (u32)(Tilt_Real_Angle * 1000) >> 16;
@@ -1771,7 +1771,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Origin_Tilt,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Angle_Return_Mode:           //203ÊµÊ±»Ø´«Ä£Ê½
+    case Angle_Return_Mode:           //203ÊµÊ±ï¿½Ø´ï¿½Ä£Ê½
     {
 //            if(Return_Mode != Return_Query_485)
 //            {
@@ -1782,7 +1782,7 @@ void Special_Preset_Set(u16 num)
 //            }
     }
     break;
-    case Tour_Speed_Regulation:       //204Ñ²¼ìËÙ¶ÈÔö¼Ó
+    case Tour_Speed_Regulation:       //204Ñ²ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -1804,7 +1804,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_Speed_Level:            //205Ñ²¼ìËÙ¶È×î´ó
+    case Tour_Speed_Level:            //205Ñ²ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -1826,7 +1826,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_StayTime_Regulation:    //206Ñ²¼ìÍ£ÁôÊ±¼äÔö¼Ó
+    case Tour_StayTime_Regulation:    //206Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if(Tour_Time < Tour_WaitTime_Max)
         {
@@ -1842,7 +1842,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_StayTime_Level:         //207Ñ²¼ìÍ£ÁôÊ±¼ä×î´ó
+    case Tour_StayTime_Level:         //207Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Tour_Time = Tour_WaitTime_Max;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -1851,7 +1851,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Watcher_StayTime_Regulation: //208ÊØÍûÍ£ÁôÊ±¼äÔö¼Ó
+    case Watcher_StayTime_Regulation: //208ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if(Watcher_Time < Watcher_WaitTime_Max)
         {
@@ -1867,7 +1867,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Watcher_StayTime_Level:      //209ÊØÍûÍ£ÁôÊ±¼ä×î´ó
+    case Watcher_StayTime_Level:      //209ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Watcher_Time = Watcher_WaitTime_Max;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -1876,7 +1876,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Speed_Regulation:       //210É¨ÃèËÙ¶ÈÔö¼Ó
+    case Scan_Speed_Regulation:       //210É¨ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -1893,7 +1893,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Scan_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Speed_Level:            //211É¨ÃèËÙ¶È×î´ó
+    case Scan_Speed_Level:            //211É¨ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½
     {
          if (Speed_Set_Satus == 0)
          {
@@ -1910,7 +1910,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Scan_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Return_Type:                 //213½Ç¶È»Ø´«
+    case Return_Type:                 //213ï¿½Ç¶È»Ø´ï¿½
     {
         Return_Data_Type = Return_Angle;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -1918,8 +1918,8 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Return_Type,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-//        case Laser_Adjust_Switch_UNV:       //162ÍË³ö¼¤¹âµÆµ÷½ÚÄ£Ê½,ÓîÊÓ
-    case Laser_Adjust_Switch:         //214½øÈë¼¤¹âµÆµ÷½ÚÄ£Ê½
+//        case Laser_Adjust_Switch_UNV:       //162ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ä£Ê½,ï¿½ï¿½ï¿½ï¿½
+    case Laser_Adjust_Switch:         //214ï¿½ï¿½ï¿½ë¼¤ï¿½ï¿½Æµï¿½ï¿½ï¿½Ä£Ê½
     {
         Axial = 1;
         Pan_Motion_Mode = Rocker_Motion;
@@ -1929,14 +1929,14 @@ void Special_Preset_Set(u16 num)
         Special_Function = Tour_Scan_Disable;
     }
     break;
-//    case USART3_Protocol_Type_Switch:       //221 U3Ä£Ê½¸ÄÎªVISCA
+//    case USART3_Protocol_Type_Switch:       //221 U3Ä£Ê½ï¿½ï¿½ÎªVISCA
 //    {
 //        USART3_Protocol_Type = Protocol_VISCA;
 //        PT_Position_Record[7] = USART3_Protocol_Type;
 //        EEPRom_WriteDataLen(EEPROM_Parameter,USART3_Protocol_Type_Switch,PT_Position_Record,Parameter_Bytes_NUN);
 //    }
 //    break;
-    case Self_Adaption_Switch:        //222¿ªÆô×ÔÊÊÓ¦
+    case Self_Adaption_Switch:        //222ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
     {
         Self_Adaption = Self_Adaption_Enable;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -1944,19 +1944,19 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Self_Adaption_Switch,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Home_Position:               //223Ë®Æ½´¹Ö±»ØÔ­µã
+    case Home_Position:               //223Ë®Æ½ï¿½ï¿½Ö±ï¿½ï¿½Ô­ï¿½ï¿½
     {
         Pan_Motion_Mode = Location_Motion;
         Tilt_Motion_Mode = Location_Motion;
         Pan_Target_Angle = Pan_Origin_User;
         Tilt_Target_Angle = Tilt_Origin_User;
-        Pan_Location_Speed = Pan_Ultimate_MaxSpeed*Speed_Scale_Pan;     //Ê¹ÓÃ×î´óËÙ¶È»ØÔ­µã
+        Pan_Location_Speed = Pan_Ultimate_MaxSpeed*Speed_Scale_Pan;     //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È»ï¿½Ô­ï¿½ï¿½
         Tilt_Location_Speed = Tilt_Ultimate_MaxSpeed*Speed_Scale_Tilt;
         Place_InOut_Pan = OutPlace;
         Place_InOut_Tilt = OutPlace;
     }
     break;
-//    case Limit_Pan:                   //225´ò¿ªË®Æ½ÏÞÎ»
+//    case Limit_Pan:                   //225ï¿½ï¿½Ë®Æ½ï¿½ï¿½Î»
 //    {
 //        Pan_User_Limit_Switch = Pan_User_Limit_Enable;
 //        memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -1964,7 +1964,7 @@ void Special_Preset_Set(u16 num)
 //        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Pan,PT_Position_Record,Parameter_Bytes_NUN);
 //    }
 //    break;
-    case Limit_Right:                 //226ÉèÖÃÓÒÏÞÎ»
+    case Limit_Right:                 //226ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
 			if (Pan_Real_Angle - Pan_User_Limit_L > 75)
@@ -1977,7 +1977,7 @@ void Special_Preset_Set(u16 num)
 			}
     }
     break;
-    case Limit_Left:                  //227ÉèÖÃ×óÏÞÎ»
+    case Limit_Left:                  //227ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
 			if(Pan_User_Limit_R - Pan_Real_Angle > 75)
@@ -1990,7 +1990,7 @@ void Special_Preset_Set(u16 num)
 			}
     }
     break;
-    case Watcher_Set:                 //228ÉèÖÃÊØÍûÎ»²¢¿ªÆô
+    case Watcher_Set:                 //228ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[1] = ON;
@@ -2003,11 +2003,11 @@ void Special_Preset_Set(u16 num)
         Watcher_Angle_Pan = Pan_Real_Angle;
         Watcher_Angle_Tilt = Tilt_Real_Angle;
         Watcher_Switch = ON;
-        watcher_pause_state = watcher_continue; //ÊØÍûÎ»ÔÝÍ£×´Ì¬¸ÄÎª¡®¼ÌÐø¡¯
-        EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Record,Parameter_Bytes_NUN);   //¼ÇÂ¼ÊØÍûÎ»×ø±ê
+        watcher_pause_state = watcher_continue; //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Record,Parameter_Bytes_NUN);   //ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
     }
     break;
-    case Delete_Data:                 //ÉèÖÃ3´Î230Çå³ýËùÓÐÓÃ»§Ô¤ÖÃÎ»£¬²»°üÀ¨ÌØÊâÔ¤ÖÃÎ»£¬²»Ó°ÏìÊØÍûÎ»
+    case Delete_Data:                 //ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½230ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         Delete_Preset_FLag ++;
         if(Delete_Preset_FLag == 3)
@@ -2018,24 +2018,24 @@ void Special_Preset_Set(u16 num)
             TIM_SetCompare1(TIM9,0);
             TIM_SetCompare2(TIM9,0);
             delay_us(10000);
-            for(i1 = 1; i1 < (EE_TYPE / Preset_Bytes_NUN); i1 ++)   //eetype¶ÔÓ¦µÄÊÇ²»Í¬ÐÍºÅeepromµÄ×Ö½ÚÊý£¬Ã¿¸öÔ¤ÖÃÎ»ÐèÒª´æ´¢16¸ö×Ö½Ú
+            for(i1 = 1; i1 < (EE_TYPE / Preset_Bytes_NUN); i1 ++)   //eetypeï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ç²ï¿½Í¬ï¿½Íºï¿½eepromï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½Òªï¿½æ´¢16ï¿½ï¿½ï¿½Ö½ï¿½
             {
-                EEPRom_WriteDataLen(EEPROM_Preset,i1,ERASE_EE_Preset,Preset_Bytes_NUN); //EEPROM_PresetÊÇÓÃ»§Ô¤ÖÃÎ»´æ´¢µÄEEPROM
+                EEPRom_WriteDataLen(EEPROM_Preset,i1,ERASE_EE_Preset,Preset_Bytes_NUN); //EEPROM_Presetï¿½ï¿½ï¿½Ã»ï¿½Ô¤ï¿½ï¿½Î»ï¿½æ´¢ï¿½ï¿½EEPROM
                 //*****************************
-                //Î¹¹·
+                //Î¹ï¿½ï¿½
                 IWDG_ReloadCounter();
                 Stay_Time = 0;
             }
-//            if(pan_encoder_type == 3 && tilt_encoder_type == 3) //Èç¹û±àÂëÆ÷ÊÇICMU£¬ÔòÐèÒª¼ÇÂ¼±àÂëÆ÷µÄµ±Ç°Öµ
+//            if(pan_encoder_type == 3 && tilt_encoder_type == 3) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ICMUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ç°Öµ
 //            {
 //                STMFLASH_Write_1(track_offect,Pan_Encoder_Position_Save,Tilt_Encoder_Position_Save,encoder_counter);
 //            }
             delay_us(10000);
-            SoftReset();        //Èí¸´Î»
+            SoftReset();        //ï¿½ï¿½ï¿½ï¿½Î»
         }
     }
     break;
-    case Section_Border1:             //231ÉèÖÃÉÈÇø±ß½ç1
+    case Section_Border1:             //231ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½1
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[2] = (u32)(Pan_Real_Angle * 1000) >> 16;
@@ -2047,7 +2047,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Section_Border1,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Section_Border2:             //232ÉèÖÃÉÈÇø±ß½ç2
+    case Section_Border2:             //232ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½2
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         PT_Position_Record[2] = (u32)(Pan_Real_Angle * 1000) >> 16;
@@ -2059,7 +2059,7 @@ void Special_Preset_Set(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Section_Border2,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Switch:                 //233Æô¶¯ÉÈÇøÉ¨Ãè
+    case Scan_Switch:                 //233ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½
     {
         PT_Scan1 = EEPRom_ReadOneByte(EEPROM_Parameter,(Section_Border1 - 1) * Parameter_Bytes_NUN);
         PT_Scan2 = EEPRom_ReadOneByte(EEPROM_Parameter,(Section_Border2 - 1) * Parameter_Bytes_NUN);
@@ -2109,7 +2109,7 @@ void Special_Preset_Set(u16 num)
         }
     }
     break;
-    case Scan_Switch_1:                 //234Æô¶¯´óÓÚ180¶ÈÉÈÇøÉ¨Ãè
+    case Scan_Switch_1:                 //234ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½180ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½
     {
         if(!Pan_User_Limit_Switch)
 				{
@@ -2162,7 +2162,7 @@ void Special_Preset_Set(u16 num)
 //            Normal_Speed = Low_Leve;
 //        }break;
 #ifdef ZS02
-		case Limit_Up_Set:							//236ÉèÖÃÉÏÏÞÎ»
+		case Limit_Up_Set:							//236ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 			if(Tilt_Real_Angle - Tilt_Angle_Limit_Down + 360 > 75)
 			{
 								Tilt_Limit_Up = (Tilt_Real_Angle < Tilt_Angle_Limit_Up)? Tilt_Real_Angle:Tilt_Angle_Limit_Up ;
@@ -2176,7 +2176,7 @@ void Special_Preset_Set(u16 num)
                 EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Up_Set,PT_Position_Record,Parameter_Bytes_NUN);
 			}
 				break;
-				case Limit_Down_Set:						//ÉèÖÃÏÂÏÞÎ»
+				case Limit_Down_Set:						//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 					if(360 - Tilt_Real_Angle + Tilt_Angle_Limit_Up > 75)
 					{
 								Tilt_Limit_Down = (Tilt_Real_Angle > Tilt_Angle_Limit_Down) ? Tilt_Real_Angle:Tilt_Angle_Limit_Down;
@@ -2191,7 +2191,7 @@ void Special_Preset_Set(u16 num)
 					}
 						break;
     case Inversion:
-            PTZ_Inverted = 0;//Õý×°
+            PTZ_Inverted = 0;//ï¿½ï¿½×°
             Pan_Encoder_Direction = Encoder_Inversion;
 						Tilt_Encoder_Direction = Encoder_Forward;
             memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2241,19 +2241,19 @@ void Special_Preset_Delete(u16 num)
 {
     switch(num)
     {
-    case Origin_Pan:                  //201É¾³ýË®Æ½Ô­µã
+    case Origin_Pan:                  //201É¾ï¿½ï¿½Ë®Æ½Ô­ï¿½ï¿½
     {
         Pan_Origin_User = 0;
         EEPRom_WriteOneByte(EEPROM_Parameter,(Origin_Pan - 1) * Parameter_Bytes_NUN,0xff);
     }
     break;
-    case Origin_Tilt:                 //202É¾³ý´¹Ö±Ô­µã
+    case Origin_Tilt:                 //202É¾ï¿½ï¿½ï¿½ï¿½Ö±Ô­ï¿½ï¿½
     {
         Tilt_Origin_User = 0;
         EEPRom_WriteOneByte(EEPROM_Parameter,(Origin_Tilt - 1) * Parameter_Bytes_NUN,0xff);
     }
     break;
-    case Tour_Speed_Level:            //205Ñ²¼ìËÙ¶ÈÖÐµÈ
+    case Tour_Speed_Level:            //205Ñ²ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Ðµï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -2275,7 +2275,7 @@ void Special_Preset_Delete(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_StayTime_Level:         //207Ñ²¼ìÍ£ÁôÊ±¼äÖÐµÈ
+    case Tour_StayTime_Level:         //207Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ðµï¿½
     {
         Tour_Time = Tour_WaitTime_Mid;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2284,7 +2284,7 @@ void Special_Preset_Delete(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Watcher_StayTime_Level:      //209ÊØÍûÍ£ÁôÊ±¼äÖÐµÈ
+    case Watcher_StayTime_Level:      //209ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ðµï¿½
     {
         Watcher_Time = Watcher_WaitTime_Mid;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2293,7 +2293,7 @@ void Special_Preset_Delete(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Speed_Level:            //211É¨ÃèËÙ¶ÈÖÐµÈ
+    case Scan_Speed_Level:            //211É¨ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½Ðµï¿½
     {
         Scan_Speed = Scan_Speed_Mid;
         if (Speed_Set_Satus == 0)
@@ -2331,21 +2331,21 @@ void Special_Preset_Delete(u16 num)
             EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Right,PT_Position_Record,Parameter_Bytes_NUN);           
     }
     break;
-    case Watcher_Set:                 //228Çå³ýÊØÍûÎ»
+    case Watcher_Set:                 //228ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         memcpy(PT_Position_Record,ERASE_EE_Parameter,Parameter_Bytes_NUN);
         PT_Position_Record[1] = OFF;
-        EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Record,Parameter_Bytes_NUN);    //½«ÊØÍûÎ»¿ª¹ØÇå³ý
+        EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Record,Parameter_Bytes_NUN);    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Watcher_Switch = OFF;
-        watcher_pause_state = watcher_pause;    //ÊØÍûÎ»ÔÝÍ£×´Ì¬¸ÄÎª¡®¼ÌÐø¡¯
+        watcher_pause_state = watcher_pause;    //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
     break;
-    case Section_Border1:             //231É¾³ýÉÈÇø±ß½ç1
+    case Section_Border1:             //231É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½1
     {
         EEPRom_WriteOneByte(EEPROM_Parameter,(Section_Border1 - 1) * Parameter_Bytes_NUN,0xff);
     }
     break;
-    case Section_Border2:             //232É¾³ýÉÈÇø±ß½ç2
+    case Section_Border2:             //232É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½2
     {
         EEPRom_WriteOneByte(EEPROM_Parameter,(Section_Border2 - 1) * Parameter_Bytes_NUN,0xff);
     }
@@ -2380,7 +2380,7 @@ void Special_Preset_Delete(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Machine_Down_EE,PT_Position_Record,Parameter_Bytes_NUN);	
 		}break;
 		#endif
-    case 237:               //237É¾³ýËùÓÐÏÞÎ»µã
+    case 237:               //237É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
     {
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
         
@@ -2388,13 +2388,13 @@ void Special_Preset_Delete(u16 num)
         PT_Position_Record[2] = (u32)(Pan_User_Limit_L * 1000) >> 16;
         PT_Position_Record[3] = (u32)(Pan_User_Limit_L * 1000) >> 8;
         PT_Position_Record[4] = (u32)(Pan_User_Limit_L * 1000) & 0xff;
-        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Left,PT_Position_Record,Parameter_Bytes_NUN);//×ó±ß½ç»Ö¸´Ä¬ÈÏÖµ    
+        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Left,PT_Position_Record,Parameter_Bytes_NUN);//ï¿½ï¿½ß½ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½Öµ    
 
         Pan_User_Limit_R = 360.0 - Pan_Limit_Break;
         PT_Position_Record[2] = (u32)(Pan_User_Limit_R * 1000) >> 16;
         PT_Position_Record[3] = (u32)(Pan_User_Limit_R * 1000) >> 8;
         PT_Position_Record[4] = (u32)(Pan_User_Limit_R * 1000) & 0xff;
-        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Right,PT_Position_Record,Parameter_Bytes_NUN);//ÓÒ±ß½ç»Ö¸´Ä¬ÈÏÖµ   
+        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Right,PT_Position_Record,Parameter_Bytes_NUN);//ï¿½Ò±ß½ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½Öµ   
 
         Tilt_Limit_Up = Tilt_Angle_Limit_Up;
 				PT_Position_Record[1] = 0;
@@ -2451,7 +2451,7 @@ void Special_Preset_Extract(u16 num)
 #ifdef HY
 			case 99:
 			{
-				//Ðý×ªÇ°ÅÐ¶ÏËÙ¶È
+				//ï¿½ï¿½×ªÇ°ï¿½Ð¶ï¿½ï¿½Ù¶ï¿½
 				if(Speed_Rotate == 0)
         {
             Speed_Rotate = Pan_Ultimate_MaxSpeed/2;
@@ -2460,7 +2460,7 @@ void Special_Preset_Extract(u16 num)
         Leading_mod = 0;
 			}break;
 #endif
-    case Angle_Return_Mode:           //203²éÑ¯»Ø´«Ä£Ê½
+    case Angle_Return_Mode:           //203ï¿½ï¿½Ñ¯ï¿½Ø´ï¿½Ä£Ê½
     {
         Return_Mode = Return_Query;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2468,7 +2468,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_Speed_Regulation:       //204Ñ²¼ìËÙ¶È¼õÉÙ
+    case Tour_Speed_Regulation:       //204Ñ²ï¿½ï¿½ï¿½Ù¶È¼ï¿½ï¿½ï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -2490,7 +2490,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_Speed_Level:            //205Ñ²¼ìËÙ¶È×îÐ¡
+    case Tour_Speed_Level:            //205Ñ²ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½Ð¡
     {
         if (Speed_Set_Satus == 0)
         {
@@ -2512,7 +2512,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_StayTime_Regulation:    //206Ñ²¼ìÍ£ÁôÊ±¼ä¼õÉÙ
+    case Tour_StayTime_Regulation:    //206Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if(Tour_Time > Tour_WaitTime_Min)
         {
@@ -2528,7 +2528,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Tour_StayTime_Level:         //207Ñ²¼ìÍ£ÁôÊ±¼ä×îÐ¡
+    case Tour_StayTime_Level:         //207Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð¡
     {
         Tour_Time = Tour_WaitTime_Min;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2537,7 +2537,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Watcher_StayTime_Regulation: //208ÊØÍûÍ£ÁôÊ±¼ä¼õÉÙ
+    case Watcher_StayTime_Regulation: //208ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         if(Watcher_Time > Watcher_WaitTime_Min)
         {
@@ -2553,7 +2553,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Watcher_StayTime_Level:      //209ÊØÍûÍ£ÁôÊ±¼ä×îÐ¡
+    case Watcher_StayTime_Level:      //209ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð¡
     {
         Watcher_Time = Watcher_WaitTime_Min;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2562,7 +2562,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Speed_Regulation:       //210É¨ÃèËÙ¶È¼õÉÙ
+    case Scan_Speed_Regulation:       //210É¨ï¿½ï¿½ï¿½Ù¶È¼ï¿½ï¿½ï¿½
     {
         if (Speed_Set_Satus == 0)
         {
@@ -2579,7 +2579,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Scan_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Scan_Speed_Level:            //211É¨ÃèËÙ¶È×îÐ¡
+    case Scan_Speed_Level:            //211É¨ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½Ð¡
     {
         if (Speed_Set_Satus == 0)
         {
@@ -2596,7 +2596,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Scan_Speed_Level,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Return_Query_485:            //212µ¥485Ä£Ê½
+    case Return_Query_485:            //212ï¿½ï¿½485Ä£Ê½
     {
         Return_Mode = Return_Query_485;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2604,7 +2604,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Return_Type:                 //213×ø±ê»Ø´«
+    case Return_Type:                 //213ï¿½ï¿½ï¿½ï¿½Ø´ï¿½
     {
         Return_Data_Type = Return_Position;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2612,21 +2612,21 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Return_Type,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-//        case Laser_Adjust_Switch_UNV:       //162ÍË³ö¼¤¹âµÆµ÷½ÚÄ£Ê½,ÓîÊÓ
-    case Laser_Adjust_Switch:         //214ÍË³ö¼¤¹âµÆµ÷½ÚÄ£Ê½
+//        case Laser_Adjust_Switch_UNV:       //162ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ä£Ê½,ï¿½ï¿½ï¿½ï¿½
+    case Laser_Adjust_Switch:         //214ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ä£Ê½
     {
         Axial = 0;
 //            Post_Information_Function(Sem_USART3_TX,&USART3_TX_BOX,Preset_Extract,Laser_Adjust_Switch);
     }
     break;
-//    case USART3_Protocol_Type_Switch:       //221 U3Ä£Ê½¸ÄÎªPELCO
+//    case USART3_Protocol_Type_Switch:       //221 U3Ä£Ê½ï¿½ï¿½ÎªPELCO
 //    {
 //        USART3_Protocol_Type = Protocol_PELCO_D;
 //        PT_Position_Record[7] = USART3_Protocol_Type;
 //        EEPRom_WriteDataLen(EEPROM_Parameter,USART3_Protocol_Type_Switch,PT_Position_Record,Parameter_Bytes_NUN);
 //    }
 //    break;
-    case Self_Adaption_Switch:        //222¹Ø±Õ×ÔÊÊÓ¦
+    case Self_Adaption_Switch:        //222ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
     {
         Self_Adaption = Self_Adaption_Manual_Disable;
         memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2634,7 +2634,7 @@ void Special_Preset_Extract(u16 num)
         EEPRom_WriteDataLen(EEPROM_Parameter,Self_Adaption_Switch,PT_Position_Record,Parameter_Bytes_NUN);
     }
     break;
-    case Home_Position:               //223Ë®Æ½180£¬´¹Ö±»ØÔ­µã
+    case Home_Position:               //223Ë®Æ½180ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Ô­ï¿½ï¿½
     {
         Pan_Motion_Mode = Location_Motion;
         Tilt_Motion_Mode = Location_Motion;
@@ -2647,13 +2647,13 @@ void Special_Preset_Extract(u16 num)
             Pan_Target_Angle = Pan_Origin_User - 180;
         }
         Tilt_Target_Angle = Tilt_Origin_User;
-        Pan_Location_Speed = Pan_Ultimate_MaxSpeed*Speed_Scale_Pan;     //Ê¹ÓÃ×î´óËÙ¶È»ØÔ­µã
+        Pan_Location_Speed = Pan_Ultimate_MaxSpeed*Speed_Scale_Pan;     //Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È»ï¿½Ô­ï¿½ï¿½
         Tilt_Location_Speed = Tilt_Ultimate_MaxSpeed*Speed_Scale_Tilt;
         Place_InOut_Pan = OutPlace;
         Place_InOut_Tilt = OutPlace;
     }
     break;
-//    case Limit_Pan:                   //225¹Ø±ÕË®Æ½ÏÞÎ»
+//    case Limit_Pan:                   //225ï¿½Ø±ï¿½Ë®Æ½ï¿½ï¿½Î»
 //    {
 //        Pan_User_Limit_Switch = Pan_User_Limit_Disable;
 //        memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2661,9 +2661,9 @@ void Special_Preset_Extract(u16 num)
 //        EEPRom_WriteDataLen(EEPROM_Parameter,Limit_Pan,PT_Position_Record,Parameter_Bytes_NUN);
 //    }
 //    break;
-    case Watcher_Set:                 //228¿ªÆôÊØÍûÎ»
+    case Watcher_Set:                 //228ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
-        if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_Set - 1) * Parameter_Bytes_NUN) == 0xaa)//228ÓÃ»§ÊØÍûÎ»
+        if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_Set - 1) * Parameter_Bytes_NUN) == 0xaa)//228ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Î»
         {
             EEPRom_ReadDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Extract,Parameter_Bytes_NUN);
             data_p = 0;
@@ -2680,7 +2680,7 @@ void Special_Preset_Extract(u16 num)
             data_t |= PT_Position_Extract[7];
             Watcher_Angle_Pan = ((double)data_p) / 1000.0;
             Watcher_Angle_Tilt = ((double)data_t) / 1000.0;
-            Watcher_Switch = ON;    //¿ªÆôÊØÍûÎ»
+            Watcher_Switch = ON;    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
             watcher_pause_state = watcher_continue;
         }
         else
@@ -2690,9 +2690,9 @@ void Special_Preset_Extract(u16 num)
         }
     }
     break;
-    case Tour_Switch:                 //229¿ªÆôÑ²¼ì
+    case Tour_Switch:                 //229ï¿½ï¿½ï¿½ï¿½Ñ²ï¿½ï¿½
     {
-        watcher_pause_state = watcher_pause;    //ÊØÍûÎ»ÔÝÍ£×´Ì¬¸ÄÎª¡®ÔÝÍ£¡¯
+        watcher_pause_state = watcher_pause;    //ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½
         Preset_Number = 0;
         Pan_Target_Speed = 0;
         Stay_Time = 0;
@@ -2752,7 +2752,7 @@ void Special_Preset_Extract(u16 num)
         }
     }
     break;
-    case Delete_Data:                 //µ÷ÓÃ3´Î230Çå³ýËùÓÐÊý¾Ý°üÀ¨ÌØÊâÔ¤ÖÃÎ»£¬É¾³ýÊØÍûÎ»
+    case Delete_Data:                 //ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½230ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½Î»ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         Delete_Data_FLag ++;
         if(Delete_Data_FLag == 3)
@@ -2766,7 +2766,7 @@ void Special_Preset_Extract(u16 num)
             {
                 EEPRom_WriteDataLen(EEPROM_Preset,i1,ERASE_EE_Preset,sizeof(ERASE_EE_Preset));
                 //*****************************
-                //Î¹¹·
+                //Î¹ï¿½ï¿½
                 IWDG_ReloadCounter();
                 Stay_Time = 0;
             }
@@ -2774,27 +2774,27 @@ void Special_Preset_Extract(u16 num)
             {
                 EEPRom_WriteDataLen(EEPROM_Parameter,i2,ERASE_EE_Parameter,sizeof(ERASE_EE_Parameter));
                 //*****************************
-                //Î¹¹·
+                //Î¹ï¿½ï¿½
                 IWDG_ReloadCounter();
                 Stay_Time = 0;
             }
-//            if(pan_encoder_type == 3 && tilt_encoder_type == 3) //Èç¹û±àÂëÆ÷ÊÇICMUÔòÐèÒª¼ÇÂ¼±àÂëÆ÷µ±Ç°ÊýÖµ
+//            if(pan_encoder_type == 3 && tilt_encoder_type == 3) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ICMUï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Öµ
 //            {
 //                STMFLASH_Write_1(track_offect,Pan_Encoder_Position_Save,Tilt_Encoder_Position_Save,encoder_counter);
 //            }
             delay_us(10000);
-            SoftReset();//Ö±½Ó¸´Î»
+            SoftReset();//Ö±ï¿½Ó¸ï¿½Î»
         }
     }
     break;
-//    case Scan_Switch:                 //233Í£Ö¹ÌØÊâ¹¦ÄÜ£¨Ñ²¼ì£¬É¨Ãè£©
+//    case Scan_Switch:                 //233Í£Ö¹ï¿½ï¿½ï¿½â¹¦ï¿½Ü£ï¿½Ñ²ï¿½ì£¬É¨ï¿½è£©
 //    {
 //        Special_Function = Tour_Scan_Disable;
 //    }
 //    break;
 #ifdef ZS02
     case Inversion:
-            PTZ_Inverted = 1;//µ¹×°
+            PTZ_Inverted = 1;//ï¿½ï¿½×°
             Pan_Encoder_Direction = Encoder_Forward;
 						Tilt_Encoder_Direction = Encoder_Inversion;
             memcpy(PT_Position_Record,Position_Data_Format,Parameter_Bytes_NUN);
@@ -2876,7 +2876,7 @@ u32 Parameters_Init(void)
 		}
 		else
 		{
-				//Î´¶¨ÒåÔ­µã ´íÎó
+				//Î´ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		if(pBuffer[2] != 0xffffffff && pBuffer[3] != 0xffffffff)
 		{
@@ -2920,12 +2920,12 @@ u32 Parameters_Init(void)
 						}
 						else
 						{
-								Tilt_Limit_Up = Tilt_Angle_Limit_Up_default;    //Èç¹ûÎ´ÉèÖÃÏÞÎ»½Ç¶È£¬Ôò°´ÕÕÄ¬ÈÏÏÞÎ»½Ç¶È½øÐÐÉèÖÃ
+								Tilt_Limit_Up = Tilt_Angle_Limit_Up_default;    //ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 				}
 				else
 				{
-						Tilt_Limit_Up = Tilt_Angle_Limit_Up_default;    //Èç¹ûÎ´ÉèÖÃÏÞÎ»½Ç¶È£¬Ôò°´ÕÕÄ¬ÈÏÏÞÎ»½Ç¶È½øÐÐÉèÖÃ
+						Tilt_Limit_Up = Tilt_Angle_Limit_Up_default;    //ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				}
     }
     if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Machine_Down_EE - 1) * Parameter_Bytes_NUN) == 0xaa)//0x01ff
@@ -2960,15 +2960,15 @@ u32 Parameters_Init(void)
 						}
 						else
 						{
-								Tilt_Limit_Down = Tilt_Angle_Limit_Down_default;    //Èç¹ûÎ´ÉèÖÃÏÞÎ»½Ç¶È£¬Ôò°´ÕÕÄ¬ÈÏÏÞÎ»½Ç¶È½øÐÐÉèÖÃ
+								Tilt_Limit_Down = Tilt_Angle_Limit_Down_default;    //ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 						}
 				}
 				else
 				{
-						Tilt_Limit_Down = Tilt_Angle_Limit_Down_default;    //Èç¹ûÎ´ÉèÖÃÏÞÎ»½Ç¶È£¬Ôò°´ÕÕÄ¬ÈÏÏÞÎ»½Ç¶È½øÐÐÉèÖÃ
+						Tilt_Limit_Down = Tilt_Angle_Limit_Down_default;    //ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ç¶È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				}
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tilt_Angle_Direction_EE - 1) * Parameter_Bytes_NUN) == 0xaa)//0x03ff//¶Á³ö·´×ª±êÖ¾
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tilt_Angle_Direction_EE - 1) * Parameter_Bytes_NUN) == 0xaa)//0x03ff//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ö¾
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Tilt_Angle_Direction_EE,PT_Position_Extract,Parameter_Bytes_NUN);
         Tilt_Encoder_Direction = PT_Position_Extract[7];
@@ -2977,7 +2977,7 @@ u32 Parameters_Init(void)
     {
         Tilt_Encoder_Direction = Encoder_Inversion;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Pan - 1) * Parameter_Bytes_NUN) == 0xaa)  //1012Ë®Æ½ÏÞÎ»¿ª¹Ø
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Pan - 1) * Parameter_Bytes_NUN) == 0xaa)  //1012Ë®Æ½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Limit_Pan,PT_Position_Extract,Parameter_Bytes_NUN);
         Pan_User_Limit_Switch = PT_Position_Extract[7];
@@ -2986,7 +2986,7 @@ u32 Parameters_Init(void)
     {
         Pan_User_Limit_Switch = Pan_User_Limit_Disable;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Origin_Pan - 1) * Parameter_Bytes_NUN) == 0xaa) //201Ë®Æ½Ô­µã
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Origin_Pan - 1) * Parameter_Bytes_NUN) == 0xaa) //201Ë®Æ½Ô­ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Origin_Pan,PT_Position_Extract,Parameter_Bytes_NUN);
         data_p = 0;
@@ -3001,7 +3001,7 @@ u32 Parameters_Init(void)
     {
         Pan_Origin_User = 0;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Origin_Tilt - 1) * Parameter_Bytes_NUN) == 0xaa)    //202´¹Ö±Ô­µã
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Origin_Tilt - 1) * Parameter_Bytes_NUN) == 0xaa)    //202ï¿½ï¿½Ö±Ô­ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Origin_Tilt,PT_Position_Extract,Parameter_Bytes_NUN);
         data_t = 0;
@@ -3016,7 +3016,7 @@ u32 Parameters_Init(void)
     {
         Tilt_Origin_User = 0;
     }
-		    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Max_Speed - 1) * Preset_Bytes_NUN) == 0xaa)//×î¸ßËÙ¶È
+		    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Max_Speed - 1) * Preset_Bytes_NUN) == 0xaa)//ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Max_Speed,PT_Position_Extract,Preset_Bytes_NUN);
         if(PT_Position_Extract[1] == 0x00)
@@ -3056,18 +3056,18 @@ u32 Parameters_Init(void)
         Speed_Scale_Tilt = 1.0;
         Speed_Set_Satus = 1;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Angle_Return_Mode - 1) * Parameter_Bytes_NUN) == 0xaa)//203»Ø´«·½Ê½£¬²éÑ¯orÊµÊ±
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Angle_Return_Mode - 1) * Parameter_Bytes_NUN) == 0xaa)//203ï¿½Ø´ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ñ¯orÊµÊ±
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Extract,8);
         Return_Mode = PT_Position_Extract[7];
     }
     else
     {
-        Return_Mode = Return_Query_485;
+//        Return_Mode = Return_Query_485;
         //Return_Mode = Return_Query;
-//        Return_Mode = Return_RealTime;
+        Return_Mode = Return_RealTime;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tour_Speed_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//205Ñ²¼ìËÙ¶È
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tour_Speed_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//205Ñ²ï¿½ï¿½ï¿½Ù¶ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Tour_Speed_Level,PT_Position_Extract,Parameter_Bytes_NUN);
         Tour_Speed_Pan = ((PT_Position_Extract[4] | 0x0000) << 8) + PT_Position_Extract[5];
@@ -3086,7 +3086,7 @@ u32 Parameters_Init(void)
 					Tour_Speed_Tilt = Tour_Speed_Mid;
 				}
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tour_StayTime_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//207Ñ²¼ìÍ£ÁôÊ±¼ä
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tour_StayTime_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//207Ñ²ï¿½ï¿½Í£ï¿½ï¿½Ê±ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Tour_StayTime_Level,PT_Position_Extract,Parameter_Bytes_NUN);
         Tour_Time = ((PT_Position_Extract[6] | 0x0000) << 8) + PT_Position_Extract[7];
@@ -3095,7 +3095,7 @@ u32 Parameters_Init(void)
     {
         Tour_Time = Tour_WaitTime_Min;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_StayTime_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//209»ØÊØÍûÎ»µÈ´ýÊ±¼ä
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_StayTime_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//209ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½È´ï¿½Ê±ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Watcher_StayTime_Level,PT_Position_Extract,Parameter_Bytes_NUN);
         Watcher_Time = ((PT_Position_Extract[6] | 0x0000) << 8) + PT_Position_Extract[7];
@@ -3104,7 +3104,7 @@ u32 Parameters_Init(void)
     {
         Watcher_Time = Watcher_WaitTime_Mid;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Scan_Speed_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//211É¨ÃèËÙ¶È
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Scan_Speed_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//211É¨ï¿½ï¿½ï¿½Ù¶ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Scan_Speed_Level,PT_Position_Extract,Parameter_Bytes_NUN);
         Scan_Speed = ((PT_Position_Extract[6] | 0x0000) << 8) + PT_Position_Extract[7];
@@ -3120,7 +3120,7 @@ u32 Parameters_Init(void)
 					Scan_Speed = Scan_Speed_Mid;
 				}
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Angle_Return_Mode - 1) * Parameter_Bytes_NUN) == 0xaa)  //212µ¥485Ä£Ê½
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Angle_Return_Mode - 1) * Parameter_Bytes_NUN) == 0xaa)  //212ï¿½ï¿½485Ä£Ê½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Extract,Parameter_Bytes_NUN);
         Return_Mode = PT_Position_Extract[7];
@@ -3132,7 +3132,7 @@ u32 Parameters_Init(void)
         PT_Position_Record[7] = Return_Mode;
         EEPRom_WriteDataLen(EEPROM_Parameter,Angle_Return_Mode,PT_Position_Record,Parameter_Bytes_NUN);
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Return_Type - 1) * Parameter_Bytes_NUN) == 0xaa)//213»Ø´«Êý¾ÝÀàÐÍ£¬½Ç¶Èor±àÂëÆ÷Öµ
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Return_Type - 1) * Parameter_Bytes_NUN) == 0xaa)//213ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ç¶ï¿½orï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Return_Type,PT_Position_Extract,8);
         Return_Data_Type = PT_Position_Extract[7];
@@ -3141,16 +3141,16 @@ u32 Parameters_Init(void)
     {
         Return_Data_Type = Return_Angle;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Self_Adaption_Switch - 1) * Parameter_Bytes_NUN) == 0xaa)//222×ÔÊÊÓ¦¿ª¹Ø
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Self_Adaption_Switch - 1) * Parameter_Bytes_NUN) == 0xaa)//222ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Self_Adaption_Switch,PT_Position_Extract,Parameter_Bytes_NUN);
         Self_Adaption = PT_Position_Extract[7];
     }
     else
     {
-        Self_Adaption = Self_Adaption_Enable;//×ÔÊÊÓ¦Ä¬ÈÏ¿ªÆô
+        Self_Adaption = Self_Adaption_Disable;//ï¿½ï¿½ï¿½ï¿½Ó¦Ä¬ï¿½Ï¿ï¿½ï¿½ï¿½
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Right - 1) * Parameter_Bytes_NUN) == 0xaa)//226ÓÃ»§ÓÒÏÞÎ»
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Right - 1) * Parameter_Bytes_NUN) == 0xaa)//226ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Limit_Right,PT_Position_Extract,Parameter_Bytes_NUN);
         data_p1 = 0;
@@ -3165,7 +3165,7 @@ u32 Parameters_Init(void)
     {
         Pan_User_Limit_R = 355.0;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Left - 1) * Parameter_Bytes_NUN) == 0xaa)//227ÓÃ»§×óÏÞÎ»
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Limit_Left - 1) * Parameter_Bytes_NUN) == 0xaa)//227ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Limit_Left,PT_Position_Extract,Parameter_Bytes_NUN);
         data_p2 = 0;
@@ -3180,7 +3180,7 @@ u32 Parameters_Init(void)
     {
         Pan_User_Limit_L = 5.0;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_Set - 1) * Parameter_Bytes_NUN) == 0xaa)//228ÓÃ»§ÊØÍûÎ»
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Watcher_Set - 1) * Parameter_Bytes_NUN) == 0xaa)//228ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Î»
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Watcher_Set,PT_Position_Extract,Parameter_Bytes_NUN);
         data_p = 0;
@@ -3203,7 +3203,7 @@ u32 Parameters_Init(void)
     {
         Watcher_Switch = OFF;
     }
-//    if(EEPRom_ReadOneByte(EEPROM_Parameter,(USART3_Protocol_Type_Switch - 1) * Parameter_Bytes_NUN) == 0xaa)//U3Ð­ÒéÀàÐÍ
+//    if(EEPRom_ReadOneByte(EEPROM_Parameter,(USART3_Protocol_Type_Switch - 1) * Parameter_Bytes_NUN) == 0xaa)//U3Ð­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //    {
 //        EEPRom_ReadDataLen(EEPROM_Parameter,USART3_Protocol_Type_Switch,PT_Position_Extract,Parameter_Bytes_NUN);
 //        USART3_Protocol_Type = PT_Position_Extract[7];
@@ -3212,8 +3212,8 @@ u32 Parameters_Init(void)
 //    {
 //        USART3_Protocol_Type = Protocol_VISCA;
 //    }
-    watcher_pause_state = watcher_continue; //½«ÊØÍûÎ»ÔÝÍ£×´Ì¬ÉèÖÃÎª¼ÌÐø£¬Èç¹ûÊØÍûÎ»Æô¶¯ÔòÉÏµçºóÊØÍûÎ»´¦ÓÚ¼¤»î×´Ì¬
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(PID_Manual - 1) * Parameter_Bytes_NUN) == 0xaa)//PID ²ÎÊý
+    watcher_pause_state = watcher_continue; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½×´Ì¬
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(PID_Manual - 1) * Parameter_Bytes_NUN) == 0xaa)//PID ï¿½ï¿½ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,PID_Manual,PT_Position_Extract,Parameter_Bytes_NUN);
         Tilt_Kd =PT_Position_Record[2];
@@ -3250,7 +3250,7 @@ u32 Parameters_Init(void)
         Tilt_Ki = T_Ki;
         Tilt_Kd = T_Kd;
     }
-    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Filter_EE - 1) * Parameter_Bytes_NUN) == 0xaa)//ÂË²¨²ÎÊý
+    if(EEPRom_ReadOneByte(EEPROM_Parameter,(Filter_EE - 1) * Parameter_Bytes_NUN) == 0xaa)//ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         EEPRom_ReadDataLen(EEPROM_Parameter,Filter_EE,PT_Position_Extract,Parameter_Bytes_NUN);
         pan_data.Main_Switch = PT_Position_Record[4];
@@ -3263,10 +3263,10 @@ u32 Parameters_Init(void)
         pan_data.Main_Switch = 0;
         tilt_data.Main_Switch = 0;
         pan_data.length = 10;
-        tilt_data.length = 10;//??????øA??
+        tilt_data.length = 10;//??????ï¿½A??
     }
 #ifdef ZS02
-//    if(EEPRom_ReadOneByte(EEPROM_Parameter,(103 - 1) * Parameter_Bytes_NUN) == 0xaa)//103ÉÏµçÄ¬ÈÏÎ»ÖÃ
+//    if(EEPRom_ReadOneByte(EEPROM_Parameter,(103 - 1) * Parameter_Bytes_NUN) == 0xaa)//103ï¿½Ïµï¿½Ä¬ï¿½ï¿½Î»ï¿½ï¿½
 //    {
 //        EEPRom_ReadDataLen(EEPROM_Parameter,103,PT_Position_Extract,Parameter_Bytes_NUN);
 //        data_p = 0;
@@ -3326,7 +3326,7 @@ u32 Parameters_Init(void)
     }
     else
     {
-        PTZ_Inverted = 0;//Ä¬ÈÏÕý×°
+        PTZ_Inverted = 0;//Ä¬ï¿½ï¿½ï¿½ï¿½×°
         Pan_Encoder_Direction = (PTZ_Inverted)?Encoder_Forward : Encoder_Inversion;
 				Tilt_Encoder_Direction = (PTZ_Inverted)?Encoder_Forward : Encoder_Inversion;
     }
@@ -3340,7 +3340,7 @@ u32 Parameters_Init(void)
     }
     else
     {
-        PTZ_Inverted = 0;//Ä¬ÈÏÕý×°
+        PTZ_Inverted = 0;//Ä¬ï¿½ï¿½ï¿½ï¿½×°
         //Pan_Encoder_Direction = (PTZ_Inverted)?Encoder_Forward : Encoder_Inversion;
 				//Tilt_Encoder_Direction = (PTZ_Inverted)?Encoder_Forward : Encoder_Inversion;
     }		

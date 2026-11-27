@@ -8,12 +8,12 @@
 #include "parameters.h"
 #include "hardware.h"
 //************************************
-//ÏµÍ³×´Ì¬¼ÇÂ¼
-//**ÔÚflashµØÖ·0x08010000¼ÇÂ¼ÏµÍ³×´Ì¬
-//**Êı¾İÎªu32Êı¾İ£¬4¸ö×Ö½Úbyte3 byte2 byte1 byte0
-//**byte3:¼ÇÂ¼³ÌĞò±àÒë×´Ì¬£¬¼´Î´ÔËĞĞ×´Ì¬£¬¼ÇÎª0x10
-//  byte2:¼ÇÂ¼³ÌĞòÉı¼¶×´Ì¬£¬µÈ´ı¼ÇÎª0x11£¬Éı¼¶Íê³É½øÈëĞÂ³ÌĞò¼ÇÎª0x10
-//  byte1¡¢byte0:¼ÇÂ¼CANÍ¨ĞÅµØÖ·
+//ÏµÍ³×´Ì¬ï¿½ï¿½Â¼
+//**ï¿½ï¿½flashï¿½ï¿½Ö·0x08010000ï¿½ï¿½Â¼ÏµÍ³×´Ì¬
+//**ï¿½ï¿½ï¿½ï¿½Îªu32ï¿½ï¿½ï¿½İ£ï¿½4ï¿½ï¿½ï¿½Ö½ï¿½byte3 byte2 byte1 byte0
+//**byte3:ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Îª0x10
+//  byte2:ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Îª0x11ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½Îª0x10
+//  byte1ï¿½ï¿½byte0:ï¿½ï¿½Â¼CANÍ¨ï¿½Åµï¿½Ö·
 //
 //
 //************************************
@@ -23,7 +23,7 @@
 //                                  Parameters
 //
 //***********************************************************************************
- //ÓÃÓÚµ÷Õû±àÂëÆ÷Êä³öÖµµÄ·½Ïò ¿ÉÒÔÈ¡Encoder_Forward»òÕßEncoder_Inversion
+ //ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ä·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È¡Encoder_Forwardï¿½ï¿½ï¿½ï¿½Encoder_Inversion
 #ifdef PT_HIAC_7280
 u8 Tilt_Encoder_Direction = Encoder_Inversion;
 u8 Pan_Encoder_Direction = Encoder_Forward;
@@ -32,19 +32,19 @@ u8 Tilt_Encoder_Direction = Encoder_Forward;
 u8 Pan_Encoder_Direction = Encoder_Inversion;
 #endif
 u8 PT_ID = 0x01;
-//×ÜÏßÍ¨Ñ¶
+//ï¿½ï¿½ï¿½ï¿½Í¨Ñ¶
 u8 Assigned_Address_Flag = Unassigned_Address;
-u16 Local_CAN_StdId = 0x0001;//±ê×¼±êÊ¶·û
-u32 Local_CAN_ExtId = 0x00000000;//À©Õ¹±êÊ¶·û
-u8 Local_CAN_IDE = CAN_ID_STD;  //±ê×¼±êÊ¶·û
-u8 Local_CAN_RTR = CAN_RTR_Data;//Êı¾İÖ¡
+u16 Local_CAN_StdId = 0x0001;//ï¿½ï¿½×¼ï¿½ï¿½Ê¶ï¿½ï¿½
+u32 Local_CAN_ExtId = 0x00000000;//ï¿½ï¿½Õ¹ï¿½ï¿½Ê¶ï¿½ï¿½
+u8 Local_CAN_IDE = CAN_ID_STD;  //ï¿½ï¿½×¼ï¿½ï¿½Ê¶ï¿½ï¿½
+u8 Local_CAN_RTR = CAN_RTR_Data;//ï¿½ï¿½ï¿½ï¿½Ö¡
 u8 Local_CAN_DLC = 0x08;
 u8 Local_CAN_BUF[8];
 //**********************************************************************
 u32 USART1_BAND;
 u32 USART2_BAND;
 u32 USART3_BAND;
-u8 Axial = 0;///Í¸´«±êÊ¶//µ÷Õû»¤ÕÕÖ§¼Ü
+u8 Axial = 0;///Í¸ï¿½ï¿½ï¿½ï¿½Ê¶//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½
 u16 Stay_Time;
 u8 Delete_Preset_FLag = 0;
 u16 Delete_Preset_Time = 0;
@@ -60,7 +60,7 @@ u8 USART1_Use_DMA_Tx_Flag = 0;
 u16 USART1_data_pointer = 0;
 u16 USART1_dispose_data_pointer = 0;
 u8 USART1_First_Frame_Flag = 0;
-u8 Angle_Accuracy_Flag = 0;//µ±Ç°½Ç¶È¾«¶È±êÖ¾£¬0ÎªÆÕÍ¨¾«¶È£»1Îª¸ß¾«¶È
+u8 Angle_Accuracy_Flag = 0;//ï¿½ï¿½Ç°ï¿½Ç¶È¾ï¿½ï¿½È±ï¿½Ö¾ï¿½ï¿½0Îªï¿½ï¿½Í¨ï¿½ï¿½ï¿½È£ï¿½1Îªï¿½ß¾ï¿½ï¿½ï¿½
 //USART2
 u8 USART2_RX_Byte = 0x00;
 u8 USART2_RX_Byte_Num = 0;
@@ -101,15 +101,15 @@ u8 Preset_Number = 0;
 u8 Preset_Empty = 0;
 u8 Return_Mode = Return_Query;
 u8 Return_Data_Type = Return_Angle;
-u8 Self_Adaption = Self_Adaption_Disable;//¶÷²©Ä¬ÈÏ¹Ø±Õ×ÔÊÊÓ¦
+u8 Self_Adaption = Self_Adaption_Disable;//ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½Ï¹Ø±ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦
 u8 Special_Function = Tour_Scan_Disable;
 u8 Watcher_Switch = OFF;
-u8 watcher_pause_state = watcher_continue;//ÊØÍûÎ»ÔİÍ£×´Ì¬¸ÄÎª¡®¼ÌĞø¡¯
+u8 watcher_pause_state = watcher_continue;//ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Í£×´Ì¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 u8 Tour_Num = 0;
 u8 Scan_Num = 0;
-u16 Tour_Time = Tour_WaitTime_Min;//Ñ²¼ìÔ¤ÖÃÎ»Í£ÁôÊ±¼äÄ¬ÈÏ
-u16 Scan_Time_Left = Scan_WaitTime_Min;//Ñ²¼ìÔ¤ÖÃÎ»Í£ÁôÊ±¼äÄ¬ÈÏ
-u16 Scan_Time_Right = Scan_WaitTime_Min;//Ñ²¼ìÔ¤ÖÃÎ»Í£ÁôÊ±¼äÄ¬ÈÏ
+u16 Tour_Time = Tour_WaitTime_Min;//Ñ²ï¿½ï¿½Ô¤ï¿½ï¿½Î»Í£ï¿½ï¿½Ê±ï¿½ï¿½Ä¬ï¿½ï¿½
+u16 Scan_Time_Left = Scan_WaitTime_Min;//Ñ²ï¿½ï¿½Ô¤ï¿½ï¿½Î»Í£ï¿½ï¿½Ê±ï¿½ï¿½Ä¬ï¿½ï¿½
+u16 Scan_Time_Right = Scan_WaitTime_Min;//Ñ²ï¿½ï¿½Ô¤ï¿½ï¿½Î»Í£ï¿½ï¿½Ê±ï¿½ï¿½Ä¬ï¿½ï¿½
 u16 Scan_Zoom_Left = 0;
 u16 Scan_Zoom_Right = 0;
 u16 Watcher_Time = Watcher_WaitTime_Mid;
@@ -163,13 +163,13 @@ u8 Pan_Section_Counter = 0;
 u8 Pan_Section_Counter_Check = 0;
 u32 Pan_Current_Data = 0;//0x80000
 u16 Pan_Encoder_Data = 0;//
-u32 Pan_Encoder_Data_Last = 0;//ÉÏ´Î±àÂëÆ÷Öµ
+u32 Pan_Encoder_Data_Last = 0;//ï¿½Ï´Î±ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 u32 Pan_Machine_Origin;
 u32 Pan_Encoder_Position_Current = 0;
 u32 Pan_Encoder_Position_Save = 0;
 u32 Pan_Encoder_Position_Real = 0;
 u32 Tilt_Encoder_Position_Real = 0;
-int pan_track_offset = 0;   //ICMUµÄ²¹³¥µÄÆ«ÒÆÏµÊı
+int pan_track_offset = 0;   //ICMUï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½Ïµï¿½ï¿½
 int tilt_track_offset = 0;
 int pan_track_err = 0;
 int tilt_track_err = 0;
@@ -180,7 +180,7 @@ u8 Tilt_Section_Counter_Check = 0;
 u32 Tilt_Current_Data = 0;//0x80000
 u32 Tilt_Encoder_Position_Save = 0;
 u16 Tilt_Encoder_Data = 0;//
-u32 Tilt_Encoder_Data_Last = 0;//ÉÏ´Î±àÂëÆ÷Öµ
+u32 Tilt_Encoder_Data_Last = 0;//ï¿½Ï´Î±ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 u32 Tilt_Machine_Origin;
 u32 Tilt_Encoder_Position_Current = 0;
 double Pan_User_Limit_L = 0;
@@ -192,7 +192,7 @@ double Tilt_Limit_Down = Tilt_Angle_Limit_Down;
 u8 Tilt_Hard_Limit_FLAG = Tilt_Limit_None;
 u8 Tilt_Soft_Limit_FLAG = Tilt_Limit_None;
 u8 Origin_Machine_Flag = 0;
-u8 PT_END_ID;//20250428»ªÍøÍ¨¹ıidÇø·Ö±ä±¶¾Û½¹Ö¸Áî
+u8 PT_END_ID;//20250428ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½idï¿½ï¿½ï¿½Ö±ä±¶ï¿½Û½ï¿½Ö¸ï¿½ï¿½
 u8 Origin_Machine_Record[8] = {0xaa,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 #ifdef ZS
 u16 Extract_Number = 0;
@@ -210,7 +210,7 @@ Scan_Data Sweep[6] = {0,0,Tour_Speed_Mid,0,0};
 Patrol_Data Cruise  = {30,345,15,345,32,1,5,0,0,0,0};
 #endif
 //*******************************************************
-//å¢åŠ ç¼–ç å™¨åŒç¼“å†²æ•°ç»„ï¼Œè?°å½•è·³åŒºä»¥è¡¥å¿åå·?
+//å¢åŠ ç¼–ç å™¨åŒç¼“å†²æ•°ç»„ï¼Œï¿½?ï¿½å½•è·³åŒºä»¥è¡¥å¿åï¿½?
 //Encoder_Position_BUF_t Encoder_Position_BUF_Pan = {.Position_Sampling_Period = Pan_MAX_Sampling_Period_Position};
 //Encoder_Position_BUF_t Encoder_Position_BUF_Tilt = {.Position_Sampling_Period = Tilt_MAX_Sampling_Period_Position};
 //*******************************************************
@@ -286,7 +286,7 @@ int Tilt_CMD_Count = 1;
 int Optocoupler_Sem = 0;
 int Relay_Switch = 0;
 u8 Pan_Timer_Start = 1;
-u8 Tilt_Timer_Start = 1;//20220615Ôö¼Ó¼ÆÊ±Çø¼ä
+u8 Tilt_Timer_Start = 1;//20220615ï¿½ï¿½ï¿½Ó¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 u32 Velocity_Pan = 0;
 u32 Velocity_Tilt = 0;
 u8 ID_Dial = 0x01;
@@ -294,7 +294,7 @@ u16 Error_Record = 0;
 u8 EE_Compare[8] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff};
 u8 AlarmOut1 = OFF;
 u8 AlarmOut2 = OFF;
-u16 TimeAndData=DATE_AS_INT; //»ñÈ¡ÏµÍ³±àÒëÊ±¼ä
+u16 TimeAndData=DATE_AS_INT; //ï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 double FOV = 2.4;
 Memory_Struct   USART1_RX_BOX;
 Memory_Struct   USART2_RX_BOX;
@@ -322,7 +322,7 @@ OS_SEM  Sem_USART2_TX;
 OS_SEM  Sem_USART3_TX;
 OS_SEM  Sem_CAN;
 OS_SEM  Sem_Analyze;
-//´®¿Ú½âÎö´«µİº¯Êı
+//ï¿½ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İºï¿½ï¿½ï¿½
 void Post_Information_Function(OS_SEM TASK_SEM,Memory_Struct *TASK_Communication_Memory,u16 command,u32 data)
 {
     OS_ERR err;
@@ -352,7 +352,7 @@ void Pend_Information_Function(Memory_Struct *TASK_Communication_Memory,FNC abc)
         }
     }
 }
-//´®¿Ú·¢ËÍ´«µİº¯Êı
+//ï¿½ï¿½ï¿½Ú·ï¿½ï¿½Í´ï¿½ï¿½İºï¿½ï¿½ï¿½
 void Post_Information_Function_TX(OS_SEM TASK_SEM,Memory_Struct *TASK_Communication_Memory,u16 command,u8 *data,u8 len)
 {
  //   OS_ERR err;
@@ -419,7 +419,7 @@ u8 USART_DMA_Send_Data(DMA_Stream_TypeDef* DMAy_Streamx,u8 *tx_buf,u8 *data,u8 l
     DMA_Enable(DMAy_Streamx,length);
     return flag;
 }
-u8 Check_Sum(u8 *data,u8 start,u8 end)//ºÍ¼ÆËã
+u8 Check_Sum(u8 *data,u8 start,u8 end)//ï¿½Í¼ï¿½ï¿½ï¿½
 {
     u8 sum = 0,i;
     for(i = start; i < end; i ++)
@@ -435,14 +435,14 @@ int My_strlen(char *src)
     {
         len++;
     }
-    return len;//·µ»Ø×Ö·û´®³¤¶È
+    return len;//ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }
 //***********************************************************************************
 //
 //                                  Delay Functions
 //
 //***********************************************************************************
-//Î¢ÃëÑÓÊ±º¯Êı
+//Î¢ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 void Delay_xUS(u16 us)
 {
     u16 temp;
@@ -452,7 +452,7 @@ void Delay_xUS(u16 us)
         temp --;
     }
 }
-//ºÁÃëÑÓÊ±º¯Êı
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 void Delay_xMS(u16 ms)
 {
     u16 i,j;
@@ -466,8 +466,8 @@ void Delay_xMS(u16 ms)
 }
 void SoftReset(void)
 {
-    __set_FAULTMASK(1); // ¹Ø±ÕËùÓĞÖĞ¶Ï
-    NVIC_SystemReset(); // ¸´Î»
+    __set_FAULTMASK(1); // ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶ï¿½
+    NVIC_SystemReset(); // ï¿½ï¿½Î»
 }
 
 double HotPursuit(double goal,double now,double step,int dir)
@@ -496,9 +496,9 @@ double HotPursuit(double goal,double now,double step,int dir)
     return goal;
 }
 
-int Up_Or_Down(double angle1,double angle2)//1ÔÚ2ÉÏ³ö1 2ÔÚ1ÉÏ³ö0
+int Up_Or_Down(double angle1,double angle2)//1ï¿½ï¿½2ï¿½Ï³ï¿½1 2ï¿½ï¿½1ï¿½Ï³ï¿½0
 {
-    if(((angle1 - angle2) >= 0 && (angle1 - angle2) <= 180) || ( (angle1 - angle2) <= 0 && (angle1 - angle2) <= -180))//1 ÔÚ 2 ÉÏ
+    if(((angle1 - angle2) >= 0 && (angle1 - angle2) <= 180) || ( (angle1 - angle2) <= 0 && (angle1 - angle2) <= -180))//1 ï¿½ï¿½ 2 ï¿½ï¿½
     {
         return 1;
     }
