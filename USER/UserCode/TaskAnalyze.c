@@ -34,7 +34,9 @@ void Task_Analyze(void *p)
                  (CPU_CHAR* )"Sem_Analyze",
                  (OS_SEM_CTR)0,
                  (OS_ERR*   )&err);
-    while(1)
+	//默认打开203
+	Return_Mode = Return_RealTime;
+	while(1)
     {
         OSSemPend(&Sem_Analyze,0,OS_OPT_PEND_BLOCKING,0,&err);
         Pend_Information_Function(&Analyze_BOX,Analyze_Function);
@@ -3063,9 +3065,9 @@ u32 Parameters_Init(void)
     }
     else
     {
-//        Return_Mode = Return_Query_485;
+        Return_Mode = Return_Query_485;
         //Return_Mode = Return_Query;
-        Return_Mode = Return_RealTime;
+//        Return_Mode = Return_RealTime;
     }
     if(EEPRom_ReadOneByte(EEPROM_Parameter,(Tour_Speed_Level - 1) * Parameter_Bytes_NUN) == 0xaa)//205Ѳ���ٶ�
     {
